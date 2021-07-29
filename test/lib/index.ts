@@ -1,6 +1,6 @@
 'use strict';
 
-import {getBaseImage, getMajorAndMinorPart, getTagTasks, isNoPreRelease, parseConfig, tagImage} from '../../src/lib';
+import {getBaseImage, getMajorAndMinorPart, getTagTasks, isPreRelease, parseConfig, tagImage} from '../../src/lib';
 import assert from 'assert';
 
 describe('@sebbo2002/semantic-release-docker', function () {
@@ -97,9 +97,9 @@ describe('@sebbo2002/semantic-release-docker', function () {
             );
         });
     });
-    describe('isNoPreRelease', function() {
+    describe('isPreRelease', function() {
         it('with release', function () {
-            const result = isNoPreRelease({
+            const result = isPreRelease({
                 logger: {
                     log: () => {},
                     error: () => {}
@@ -114,10 +114,10 @@ describe('@sebbo2002/semantic-release-docker', function () {
                 }
             });
 
-            assert.strictEqual(result, true);
+            assert.strictEqual(result, false);
         });
         it('with pre-release', function () {
-            const result = isNoPreRelease({
+            const result = isPreRelease({
                 logger: {
                     log: () => {},
                     error: () => {}
@@ -133,10 +133,10 @@ describe('@sebbo2002/semantic-release-docker', function () {
                 }
             });
 
-            assert.strictEqual(result, false);
+            assert.strictEqual(result, true);
         });
         it('without release', function () {
-            const result = isNoPreRelease({
+            const result = isPreRelease({
                 logger: {
                     log: () => {},
                     error: () => {}
@@ -217,6 +217,10 @@ describe('@sebbo2002/semantic-release-docker', function () {
             assert.deepStrictEqual(result, [
                 {
                     input: 'alpine@sha256:aaaaf56b44807c64d294e6c8059b479f35350b454492398225034174808d1726',
+                    output: 'alpine:8.2.6'
+                },
+                {
+                    input: 'alpine@sha256:aaaaf56b44807c64d294e6c8059b479f35350b454492398225034174808d1726',
                     output: 'alpine:latest'
                 },
                 {
@@ -228,8 +232,8 @@ describe('@sebbo2002/semantic-release-docker', function () {
                     output: 'alpine:8.2'
                 },
                 {
-                    input: 'alpine@sha256:aaaaf56b44807c64d294e6c8059b479f35350b454492398225034174808d1726',
-                    output: 'alpine:8.2.6'
+                    input: 'sebbo2002/test:1234567',
+                    output: 'sebbo2002/test:8.2.6'
                 },
                 {
                     input: 'sebbo2002/test:1234567',
@@ -242,10 +246,6 @@ describe('@sebbo2002/semantic-release-docker', function () {
                 {
                     input: 'sebbo2002/test:1234567',
                     output: 'sebbo2002/test:8.2'
-                },
-                {
-                    input: 'sebbo2002/test:1234567',
-                    output: 'sebbo2002/test:8.2.6'
                 }
             ]);
         });

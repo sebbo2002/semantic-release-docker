@@ -1,5 +1,13 @@
-import { Context } from 'semantic-release';
-import {MajorAndMinorPart, NormalizedPluginConfigTags, NormalizedPluginConfig, PluginConfig, PluginConfigTagKeys, TagTask} from './types';
+import {Context, Release} from 'semantic-release';
+import {
+    MajorAndMinorPart,
+    NormalizedPluginConfigTags,
+    NormalizedPluginConfig,
+    PluginConfig,
+    PluginConfigTagKeys,
+    TagTask,
+    PublishResponse
+} from './types';
 import execa from 'execa';
 
 export {
@@ -57,8 +65,8 @@ export function getBaseImage (input: string): string {
     return p[0];
 }
 
-export function isNoPreRelease(context: Context): boolean {
-    return ['major', 'minor', 'patch'].includes(String(context.nextRelease?.type));
+export function isPreRelease(context: Context): boolean {
+    return Boolean(context.nextRelease && context.nextRelease.version.includes('-'));
 }
 
 export function getMajorAndMinorPart(version: string | undefined): MajorAndMinorPart {
@@ -87,7 +95,15 @@ export function getTagTasks (config: NormalizedPluginConfig, context: Context): 
     config.images.forEach(input => {
         const outputBase = getBaseImage(input);
 
-        if(isNoPreRelease(context)) {
+        // version
+        if (config.tag.version && version) {
+            result.push({
+                input,
+                output: `${outputBase}:${version}`
+            });
+        }
+
+        if(!isPreRelease(context)) {
             const {major, minor} = getMajorAndMinorPart(version);
 
             // latest
@@ -113,14 +129,6 @@ export function getTagTasks (config: NormalizedPluginConfig, context: Context): 
                     output: `${outputBase}:${major}.${minor}`
                 });
             }
-        }
-
-        // version
-        if (config.tag.version && version) {
-            result.push({
-                input,
-                output: `${outputBase}:${version}`
-            });
         }
 
         // channel
@@ -156,14 +164,17 @@ export async function pushImage(image: string): Promise<void> {
     await docker(['push', image]);
 }
 
-export async function publish (pluginConfig: PluginConfig, context: Context): Promise<void> {
+export async function publish (pluginConfig: PluginConfig, context: Context): Promise<boolean | PublishResponse> {
     if(!context.nextRelease) {
         context.logger.log('No release schedules, so no images to tag.');
-        return;
+        return false;
     }
 
     const config = parseConfig(pluginConfig);
     const tasks = getTagTasks(config, context);
+    if(!tasks.length) {
+        return false;
+    }
 
     for(const task of tasks) {
         context.logger.log(`Tag ${task.input} → ${task.output}`);
@@ -172,6 +183,17 @@ export async function publish (pluginConfig: PluginConfig, context: Context): Pr
         context.logger.log(`Push ${task.output}`);
         await pushImage(task.output);
     }
+
+    // Sadly, channel is not defined in the types…
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    const channel = context.nextRelease?.channel;
+    const firstTask = tasks[0];
+    return {
+        name: `Docker container (${firstTask.output})`,
+        url: firstTask.output,
+        channel
+    };
 }
 
 export default {
