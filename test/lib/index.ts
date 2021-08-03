@@ -1,6 +1,6 @@
 'use strict';
 
-import {getBaseImage, getMajorAndMinorPart, getTagTasks, isPreRelease, parseConfig, tagImage} from '../../src/lib';
+import {getBaseImage, getMajorAndMinorPart, getTagTasks, isPreRelease, parseConfig, tagImage, publish} from '../../src/lib';
 import assert from 'assert';
 
 describe('@sebbo2002/semantic-release-docker', function () {
@@ -302,6 +302,48 @@ describe('@sebbo2002/semantic-release-docker', function () {
     describe('tagImage', function() {
         it('tag ubuntu', async function() {
             await tagImage('alpine', 'alpine:tagging-test');
+        });
+    });
+    describe('publish', function() {
+        it('should return false if no release is scheduled', async function() {
+            const result = await publish({
+                images: []
+            }, {
+                logger: {
+                    log: () => {},
+                    error: () => {}
+                },
+                env: {}
+            });
+
+            assert.strictEqual(result, false);
+        });
+        it('should return false if there\'s nothing to do', async function() {
+            const result = await publish({
+                images: 'foo/bar:1234',
+                tag: {
+                    latest: false,
+                    major: false,
+                    minor: false,
+                    version: false,
+                    channel: false
+                }
+            }, {
+                logger: {
+                    log: () => {},
+                    error: () => {}
+                },
+                env: {},
+                nextRelease: {
+                    type: 'patch',
+                    version: '8.2.7',
+                    notes: '',
+                    gitHead: '',
+                    gitTag: ''
+                }
+            });
+
+            assert.strictEqual(result, false);
         });
     });
 });

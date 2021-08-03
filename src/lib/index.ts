@@ -1,4 +1,4 @@
-import {Context, Release} from 'semantic-release';
+import {Context} from 'semantic-release';
 import {
     MajorAndMinorPart,
     NormalizedPluginConfigTags,
