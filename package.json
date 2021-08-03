@@ -1,25 +1,22 @@
 {
-  "author": "Sebastian Pekarek <oojeesheibashumaofie@e.sebbo.net>",
-  "bin": {
-    "test-cli": "./dist/bin/cli.js"
-  },
+  "author": "Sebastian Pekarek <bahghemuuceibeigaito@e.sebbo.net>",
   "bugs": {
-    "url": "https://github.com/sebbo2002/template/issues"
+    "url": "https://github.com/sebbo2002/semantic-release-docker/issues"
   },
   "dependencies": {
-    "express": "^4.17.1"
+    "execa": "^5.1.1"
   },
-  "description": "A template that I use to start new projects and services.",
+  "description": "Plugin for semantic-release that tags a previously built Docker image and pushes it to one or more Docker registries",
   "devDependencies": {
     "@amanda-mitchell/semantic-release-npm-multiple": "^2.8.0",
     "@qiwi/semantic-release-gh-pages-plugin": "^5.0.7",
-    "@semantic-release-plus/docker": "^2.3.3",
     "@semantic-release/changelog": "^5.0.1",
     "@semantic-release/exec": "^5.0.0",
     "@semantic-release/git": "^9.0.0",
     "@types/express": "^4.17.12",
     "@types/mocha": "^8.2.2",
     "@types/node": "^15.12.3",
+    "@types/semantic-release": "^17.2.1",
     "@typescript-eslint/eslint-plugin": "^4.26.1",
     "@typescript-eslint/parser": "^4.26.1",
     "eslint": "^7.28.0",
@@ -39,23 +36,21 @@
   "files": [
     "/dist"
   ],
-  "homepage": "https://github.com/sebbo2002/template#readme",
+  "homepage": "https://github.com/sebbo2002/semantic-release-docker#readme",
   "license": "MIT",
   "main": "dist/index.js",
-  "name": "@sebbo2002/js-template-test",
+  "name": "@sebbo2002/semantic-release-docker",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sebbo2002/js-template-test.git"
+    "url": "git+https://github.com/sebbo2002/semantic-release-docker.git"
   },
   "scripts": {
-    "build": "tsc && chmod +x ./dist/bin/*.js",
+    "build": "tsc",
     "build-all": "./.github/workflows/build.sh",
     "coverage": "nyc mocha",
-    "develop": "ts-node ./src/bin/start.ts",
     "license-check": "license-checker --production --summary",
     "lint": "eslint . --ext .ts,.json",
-    "start": "node ./dist/bin/start.js",
     "test": "mocha"
   },
-  "version": "1.0.0"
+  "version": "1.0.0-develop.1"
 }

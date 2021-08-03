@@ -1,3 +1,27 @@
+# [1.0.0-develop.2](https://github.com/sebbo2002/semantic-release-docker/compare/v1.0.0-develop.1...v1.0.0-develop.2) (2021-08-03)
+
+
+### Features
+
+* Return release info after successful release ([139345d](https://github.com/sebbo2002/semantic-release-docker/commit/139345dfdd08ff258efc97da5fb6ec52d7a2c8b6))
+
+# 1.0.0-develop.1 (2021-07-26)
+
+
+### chore
+
+* Remove node.js 10 Support ([2b910c0](https://github.com/sebbo2002/semantic-release-docker/commit/2b910c09bc8a41085fc4472159494d8738d5521e))
+
+
+### Features
+
+* first commit ([c266619](https://github.com/sebbo2002/semantic-release-docker/commit/c266619159154233be9b24412745bb134564962f))
+
+
+### BREAKING CHANGES
+
+* Removed support for node.js v10
+
 # [1.0.0-develop.3](https://github.com/sebbo2002/js-template-test/compare/v1.0.0-develop.2...v1.0.0-develop.3) (2021-05-08)
 
 
