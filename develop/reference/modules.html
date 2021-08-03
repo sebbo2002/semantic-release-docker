@@ -2738,7 +2738,7 @@ img {
 			<a href="modules.html#gettagtasks" class="tsd-kind-icon">get<wbr>Tag<wbr>Tasks</a>
 		</li>
 		<li class=" tsd-kind-function">
-			<a href="modules.html#isnoprerelease" class="tsd-kind-icon">is<wbr>NoPre<wbr>Release</a>
+			<a href="modules.html#isprerelease" class="tsd-kind-icon">is<wbr>Pre<wbr>Release</a>
 		</li>
 		<li class=" tsd-kind-function">
 			<a href="modules.html#parseconfig" class="tsd-kind-icon">parse<wbr>Config</a>
@@ -2851,7 +2851,7 @@ img {
 							<li class="tsd-kind-function"><a href="modules.html#getbaseimage" class="tsd-kind-icon">get<wbr>Base<wbr>Image</a></li>
 							<li class="tsd-kind-function"><a href="modules.html#getmajorandminorpart" class="tsd-kind-icon">get<wbr>Major<wbr>And<wbr>Minor<wbr>Part</a></li>
 							<li class="tsd-kind-function"><a href="modules.html#gettagtasks" class="tsd-kind-icon">get<wbr>Tag<wbr>Tasks</a></li>
-							<li class="tsd-kind-function"><a href="modules.html#isnoprerelease" class="tsd-kind-icon">is<wbr>NoPre<wbr>Release</a></li>
+							<li class="tsd-kind-function"><a href="modules.html#isprerelease" class="tsd-kind-icon">is<wbr>Pre<wbr>Release</a></li>
 							<li class="tsd-kind-function"><a href="modules.html#parseconfig" class="tsd-kind-icon">parse<wbr>Config</a></li>
 							<li class="tsd-kind-function"><a href="modules.html#publish" class="tsd-kind-icon">publish</a></li>
 							<li class="tsd-kind-function"><a href="modules.html#pushimage" class="tsd-kind-icon">push<wbr>Image</a></li>
@@ -2869,7 +2869,7 @@ img {
 				<div class="tsd-signature tsd-kind-icon">Plugin<wbr>Config<wbr>Tag<wbr>Keys<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">keyof </span><a href="interfaces/normalizedpluginconfigtags.html" class="tsd-signature-type" data-tsd-kind="Interface">NormalizedPluginConfigTags</a></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/sebbo2002/semantic-release-docker/blob/c266619/src/lib/types.ts#L20">types.ts:20</a></li>
+						<li>Defined in <a href="https://github.com/sebbo2002/semantic-release-docker/blob/3e62c66/src/lib/types.ts#L20">types.ts:20</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -2879,18 +2879,18 @@ img {
 			<section class="tsd-panel tsd-member tsd-kind-property">
 				<a name="default" class="tsd-anchor"></a>
 				<h3>default</h3>
-				<div class="tsd-signature tsd-kind-icon">default<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>publish<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>pluginConfig<span class="tsd-signature-symbol">: </span><a href="interfaces/pluginconfig.html" class="tsd-signature-type" data-tsd-kind="Interface">PluginConfig</a>, context<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Context</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> }</span></div>
+				<div class="tsd-signature tsd-kind-icon">default<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>publish<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>pluginConfig<span class="tsd-signature-symbol">: </span><a href="interfaces/pluginconfig.html" class="tsd-signature-type" data-tsd-kind="Interface">PluginConfig</a>, context<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Context</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">PublishResponse</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> }</span></div>
 				<aside class="tsd-sources">
 				</aside>
 				<div class="tsd-type-declaration">
 					<h4>Type declaration</h4>
 					<ul class="tsd-parameters">
 						<li class="tsd-parameter">
-							<h5>publish<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>pluginConfig<span class="tsd-signature-symbol">: </span><a href="interfaces/pluginconfig.html" class="tsd-signature-type" data-tsd-kind="Interface">PluginConfig</a>, context<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Context</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h5>
+							<h5>publish<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>pluginConfig<span class="tsd-signature-symbol">: </span><a href="interfaces/pluginconfig.html" class="tsd-signature-type" data-tsd-kind="Interface">PluginConfig</a>, context<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Context</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">PublishResponse</span><span class="tsd-signature-symbol">&gt;</span></h5>
 							<ul class="tsd-parameters">
 								<li class="tsd-parameter-signature">
 									<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-type-literal">
-										<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>pluginConfig<span class="tsd-signature-symbol">: </span><a href="interfaces/pluginconfig.html" class="tsd-signature-type" data-tsd-kind="Interface">PluginConfig</a>, context<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Context</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+										<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>pluginConfig<span class="tsd-signature-symbol">: </span><a href="interfaces/pluginconfig.html" class="tsd-signature-type" data-tsd-kind="Interface">PluginConfig</a>, context<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Context</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">PublishResponse</span><span class="tsd-signature-symbol">&gt;</span></li>
 									</ul>
 									<ul class="tsd-descriptions">
 										<li class="tsd-description">
@@ -2903,7 +2903,7 @@ img {
 													<h5>context: <span class="tsd-signature-type">Context</span></h5>
 												</li>
 											</ul>
-											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">PublishResponse</span><span class="tsd-signature-symbol">&gt;</span></h4>
 										</li>
 									</ul>
 								</li>
@@ -2925,7 +2925,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/sebbo2002/semantic-release-docker/blob/c266619/src/lib/index.ts#L142">index.ts:142</a></li>
+								<li>Defined in <a href="https://github.com/sebbo2002/semantic-release-docker/blob/3e62c66/src/lib/index.ts#L150">index.ts:150</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2948,7 +2948,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/sebbo2002/semantic-release-docker/blob/c266619/src/lib/index.ts#L49">index.ts:49</a></li>
+								<li>Defined in <a href="https://github.com/sebbo2002/semantic-release-docker/blob/3e62c66/src/lib/index.ts#L57">index.ts:57</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2971,7 +2971,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/sebbo2002/semantic-release-docker/blob/c266619/src/lib/index.ts#L64">index.ts:64</a></li>
+								<li>Defined in <a href="https://github.com/sebbo2002/semantic-release-docker/blob/3e62c66/src/lib/index.ts#L72">index.ts:72</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2994,7 +2994,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/sebbo2002/semantic-release-docker/blob/c266619/src/lib/index.ts#L79">index.ts:79</a></li>
+								<li>Defined in <a href="https://github.com/sebbo2002/semantic-release-docker/blob/3e62c66/src/lib/index.ts#L87">index.ts:87</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3011,16 +3011,16 @@ img {
 				</ul>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-function">
-				<a name="isnoprerelease" class="tsd-anchor"></a>
-				<h3>is<wbr>NoPre<wbr>Release</h3>
+				<a name="isprerelease" class="tsd-anchor"></a>
+				<h3>is<wbr>Pre<wbr>Release</h3>
 				<ul class="tsd-signatures tsd-kind-function">
-					<li class="tsd-signature tsd-kind-icon">is<wbr>NoPre<wbr>Release<span class="tsd-signature-symbol">(</span>context<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Context</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					<li class="tsd-signature tsd-kind-icon">is<wbr>Pre<wbr>Release<span class="tsd-signature-symbol">(</span>context<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Context</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/sebbo2002/semantic-release-docker/blob/c266619/src/lib/index.ts#L60">index.ts:60</a></li>
+								<li>Defined in <a href="https://github.com/sebbo2002/semantic-release-docker/blob/3e62c66/src/lib/index.ts#L68">index.ts:68</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3043,7 +3043,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/sebbo2002/semantic-release-docker/blob/c266619/src/lib/index.ts#L14">index.ts:14</a></li>
+								<li>Defined in <a href="https://github.com/sebbo2002/semantic-release-docker/blob/3e62c66/src/lib/index.ts#L22">index.ts:22</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3060,13 +3060,13 @@ img {
 				<a name="publish" class="tsd-anchor"></a>
 				<h3>publish</h3>
 				<ul class="tsd-signatures tsd-kind-function">
-					<li class="tsd-signature tsd-kind-icon">publish<span class="tsd-signature-symbol">(</span>pluginConfig<span class="tsd-signature-symbol">: </span><a href="interfaces/pluginconfig.html" class="tsd-signature-type" data-tsd-kind="Interface">PluginConfig</a>, context<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Context</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					<li class="tsd-signature tsd-kind-icon">publish<span class="tsd-signature-symbol">(</span>pluginConfig<span class="tsd-signature-symbol">: </span><a href="interfaces/pluginconfig.html" class="tsd-signature-type" data-tsd-kind="Interface">PluginConfig</a>, context<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Context</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">PublishResponse</span><span class="tsd-signature-symbol">&gt;</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/sebbo2002/semantic-release-docker/blob/c266619/src/lib/index.ts#L159">index.ts:159</a></li>
+								<li>Defined in <a href="https://github.com/sebbo2002/semantic-release-docker/blob/3e62c66/src/lib/index.ts#L167">index.ts:167</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3078,7 +3078,7 @@ img {
 								<h5>context: <span class="tsd-signature-type">Context</span></h5>
 							</li>
 						</ul>
-						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">PublishResponse</span><span class="tsd-signature-symbol">&gt;</span></h4>
 					</li>
 				</ul>
 			</section>
@@ -3092,7 +3092,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/sebbo2002/semantic-release-docker/blob/c266619/src/lib/index.ts#L155">index.ts:155</a></li>
+								<li>Defined in <a href="https://github.com/sebbo2002/semantic-release-docker/blob/3e62c66/src/lib/index.ts#L163">index.ts:163</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3115,7 +3115,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/sebbo2002/semantic-release-docker/blob/c266619/src/lib/index.ts#L151">index.ts:151</a></li>
+								<li>Defined in <a href="https://github.com/sebbo2002/semantic-release-docker/blob/3e62c66/src/lib/index.ts#L159">index.ts:159</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
