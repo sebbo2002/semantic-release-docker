@@ -1,3 +1,10 @@
+# [1.0.0-develop.2](https://github.com/sebbo2002/semantic-release-docker/compare/v1.0.0-develop.1...v1.0.0-develop.2) (2021-08-03)
+
+
+### Features
+
+* Return release info after successful release ([139345d](https://github.com/sebbo2002/semantic-release-docker/commit/139345dfdd08ff258efc97da5fb6ec52d7a2c8b6))
+
 # 1.0.0-develop.1 (2021-07-26)
 
 
