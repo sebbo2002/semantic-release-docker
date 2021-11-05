@@ -1,3 +1,5 @@
+## [1.0.1-develop.1](https://github.com/sebbo2002/semantic-release-docker/compare/v1.0.0...v1.0.1-develop.1) (2021-11-05)
+
 # 1.0.0 (2021-08-03)
 
 
