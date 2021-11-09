@@ -132,9 +132,6 @@ export function getTagTasks (config: NormalizedPluginConfig, context: Context): 
         }
 
         // channel
-        // Sadly, channel is not defined in the types…
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore
         const channel = context.nextRelease?.channel;
         if (config.tag.channel && channel) {
             result.push({
@@ -152,7 +149,14 @@ export async function docker(command: string[]): Promise<void> {
         await execa('docker', command);
     }
     catch(error) {
-        throw new Error(`Unable to run "${error.command}": ${error.message}`);
+        if (typeof error === 'object' && error !== null && 'command' in error && 'message' in error) {
+
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+            // @ts-ignore
+            throw new Error(`Unable to run "${error.command}": ${error.message}`);
+        } else {
+            throw new Error(`Unable to run "${command.join(' ')}": ${error}`);
+        }
     }
 }
 
@@ -184,9 +188,6 @@ export async function publish (pluginConfig: PluginConfig, context: Context): Pr
         await pushImage(task.output);
     }
 
-    // Sadly, channel is not defined in the types…
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
     const channel = context.nextRelease?.channel;
     const firstTask = tasks[0];
     return {
