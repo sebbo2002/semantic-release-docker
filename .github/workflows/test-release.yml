@@ -68,6 +68,7 @@ jobs:
   release:
     name: Release
     runs-on: ubuntu-latest
+    concurrency: release
     env:
       PUSH_TO_DOCKERHUB: ${{ (github.repository != 'sebbo2002/js-template') && (secrets.DOCKERHUB_TOKEN != null) }}
     needs:
