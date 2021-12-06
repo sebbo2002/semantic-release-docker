@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">86.49% </span>
+                <span class="strong">84.21% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>64/74</span>
+                <span class='fraction'>64/76</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">88.68% </span>
+                <span class="strong">79.66% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>47/53</span>
+                <span class='fraction'>47/59</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">86.49% </span>
+                <span class="strong">84.21% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>64/74</span>
+                <span class='fraction'>64/76</span>
             </div>
         
             
@@ -258,7 +258,8 @@
 <a name='L199'></a><a href='#L199'>199</a>
 <a name='L200'></a><a href='#L200'>200</a>
 <a name='L201'></a><a href='#L201'>201</a>
-<a name='L202'></a><a href='#L202'>202</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L202'></a><a href='#L202'>202</a>
+<a name='L203'></a><a href='#L203'>203</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -392,9 +393,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">2x</span>
@@ -416,6 +414,13 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -442,9 +447,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -593,9 +595,6 @@ export function getTagTasks (config: NormalizedPluginConfig, context: Context): 
         }
 &nbsp;
         // channel
-        // Sadly, channel is not defined in the types…
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore
         const channel = context.nextRelease<span class="branch-0 cbranch-no" title="branch not covered" >?.c</span>hannel;
         if (config.tag.channel &amp;&amp; channel) {
             result.push({
@@ -613,7 +612,14 @@ export async function docker(command: string[]): Promise&lt;void&gt; {
         await execa('docker', command);
     }
     catch(error) {
-<span class="cstat-no" title="statement not covered" >        throw new Error(`Unable to run "${error.command}": ${error.message}`);</span>
+<span class="cstat-no" title="statement not covered" >        if (typeof error === 'object' &amp;&amp; error !== null &amp;&amp; 'command' in error &amp;&amp; 'message' in error) {</span>
+&nbsp;
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+            // @ts-ignore
+<span class="cstat-no" title="statement not covered" >            throw new Error(`Unable to run "${error.command}": ${error.message}`);</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >            throw new Error(`Unable to run "${command.join(' ')}": ${error}`);</span>
+        }
     }
 }
 &nbsp;
@@ -645,9 +651,6 @@ export async function publish (pluginConfig: PluginConfig, context: Context): Pr
 <span class="cstat-no" title="statement not covered" >        await pushImage(task.output);</span>
     }
 &nbsp;
-    // Sadly, channel is not defined in the types…
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
     const channel = <span class="cstat-no" title="statement not covered" >context.nextRelease?.channel;</span>
     const firstTask = <span class="cstat-no" title="statement not covered" >tasks[0];</span>
 <span class="cstat-no" title="statement not covered" >    return {</span>
@@ -667,7 +670,7 @@ export default {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Fri Nov 05 2021 18:38:49 GMT+0000 (Coordinated Universal Time)
+                at Mon Dec 06 2021 18:59:29 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="prettify.js"></script>

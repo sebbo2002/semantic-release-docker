@@ -1,11 +1,11 @@
 <?xml version="1.0" ?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
-<coverage lines-valid="74" lines-covered="64" line-rate="0.8649" branches-valid="53" branches-covered="47" branch-rate="0.8868" timestamp="1636137529958" complexity="0" version="0.1">
+<coverage lines-valid="76" lines-covered="64" line-rate="0.8421" branches-valid="59" branches-covered="47" branch-rate="0.7966" timestamp="1638817169454" complexity="0" version="0.1">
   <sources>
     <source>/home/runner/work/semantic-release-docker/semantic-release-docker</source>
   </sources>
   <packages>
-    <class name="index.ts" filename="src/lib/index.ts" line-rate="0.8649" branch-rate="0.8868">
+    <class name="index.ts" filename="src/lib/index.ts" line-rate="0.8421" branch-rate="0.7966">
       <methods>
         <method name="parseConfig" hits="5" signature="()V">
           <lines>
@@ -54,22 +54,22 @@
         </method>
         <method name="docker" hits="1" signature="()V">
           <lines>
-            <line number="150" hits="1"/>
+            <line number="147" hits="1"/>
           </lines>
         </method>
         <method name="tagImage" hits="1" signature="()V">
           <lines>
-            <line number="159" hits="1"/>
+            <line number="163" hits="1"/>
           </lines>
         </method>
         <method name="pushImage" hits="0" signature="()V">
           <lines>
-            <line number="163" hits="0"/>
+            <line number="167" hits="0"/>
           </lines>
         </method>
         <method name="publish" hits="2" signature="()V">
           <lines>
-            <line number="167" hits="2"/>
+            <line number="171" hits="2"/>
           </lines>
         </method>
       </methods>
@@ -119,35 +119,37 @@
         <line number="119" hits="2" branch="false"/>
         <line number="126" hits="3" branch="true" condition-coverage="100% (5/5)"/>
         <line number="127" hits="2" branch="false"/>
-        <line number="138" hits="5" branch="true" condition-coverage="75% (3/4)"/>
-        <line number="139" hits="5" branch="true" condition-coverage="100% (4/4)"/>
-        <line number="140" hits="2" branch="false"/>
-        <line number="147" hits="3" branch="false"/>
-        <line number="150" hits="1" branch="false"/>
-        <line number="151" hits="1" branch="false"/>
-        <line number="152" hits="1" branch="false"/>
-        <line number="155" hits="0" branch="false"/>
-        <line number="159" hits="1" branch="false"/>
-        <line number="160" hits="1" branch="false"/>
+        <line number="135" hits="5" branch="true" condition-coverage="75% (3/4)"/>
+        <line number="136" hits="5" branch="true" condition-coverage="100% (4/4)"/>
+        <line number="137" hits="2" branch="false"/>
+        <line number="144" hits="3" branch="false"/>
+        <line number="147" hits="1" branch="false"/>
+        <line number="148" hits="1" branch="false"/>
+        <line number="149" hits="1" branch="false"/>
+        <line number="152" hits="0" branch="true" condition-coverage="0% (0/6)"/>
+        <line number="156" hits="0" branch="false"/>
+        <line number="158" hits="0" branch="false"/>
         <line number="163" hits="1" branch="false"/>
-        <line number="164" hits="0" branch="false"/>
+        <line number="164" hits="1" branch="false"/>
         <line number="167" hits="1" branch="false"/>
-        <line number="168" hits="2" branch="true" condition-coverage="100% (2/2)"/>
-        <line number="169" hits="1" branch="false"/>
-        <line number="170" hits="1" branch="false"/>
+        <line number="168" hits="0" branch="false"/>
+        <line number="171" hits="1" branch="false"/>
+        <line number="172" hits="2" branch="true" condition-coverage="100% (2/2)"/>
         <line number="173" hits="1" branch="false"/>
         <line number="174" hits="1" branch="false"/>
-        <line number="175" hits="1" branch="true" condition-coverage="50% (1/2)"/>
-        <line number="176" hits="1" branch="false"/>
-        <line number="179" hits="0" branch="false"/>
-        <line number="180" hits="0" branch="false"/>
-        <line number="181" hits="0" branch="false"/>
+        <line number="177" hits="1" branch="false"/>
+        <line number="178" hits="1" branch="false"/>
+        <line number="179" hits="1" branch="true" condition-coverage="50% (1/2)"/>
+        <line number="180" hits="1" branch="false"/>
         <line number="183" hits="0" branch="false"/>
         <line number="184" hits="0" branch="false"/>
-        <line number="190" hits="0" branch="true" condition-coverage="0% (0/4)"/>
-        <line number="191" hits="0" branch="false"/>
+        <line number="185" hits="0" branch="false"/>
+        <line number="187" hits="0" branch="false"/>
+        <line number="188" hits="0" branch="false"/>
+        <line number="191" hits="0" branch="true" condition-coverage="0% (0/4)"/>
         <line number="192" hits="0" branch="false"/>
-        <line number="199" hits="1" branch="false"/>
+        <line number="193" hits="0" branch="false"/>
+        <line number="200" hits="1" branch="false"/>
       </lines>
     </class>
   </packages>
