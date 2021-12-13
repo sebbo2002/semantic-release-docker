@@ -110,7 +110,8 @@ describe('@sebbo2002/semantic-release-docker', function () {
                     version: '8.2.6',
                     notes: '',
                     gitHead: '',
-                    gitTag: ''
+                    gitTag: '',
+                    name: ''
                 }
             });
 
@@ -124,12 +125,12 @@ describe('@sebbo2002/semantic-release-docker', function () {
                 },
                 env: {},
                 nextRelease: {
-                    // @ts-ignore
-                    type: 'prerelase',
+                    type: 'prerelease',
                     version: '8.2.6-develop.1',
                     notes: '',
                     gitHead: '',
-                    gitTag: ''
+                    gitTag: '',
+                    name: ''
                 }
             });
 
@@ -210,7 +211,8 @@ describe('@sebbo2002/semantic-release-docker', function () {
                     version: '8.2.6',
                     notes: '',
                     gitHead: '',
-                    gitTag: ''
+                    gitTag: '',
+                    name: ''
                 }
             });
 
@@ -269,10 +271,10 @@ describe('@sebbo2002/semantic-release-docker', function () {
                 },
                 env: {},
                 nextRelease: {
-                    // @ts-ignore
                     type: 'prerelease',
                     version: '8.2.6-develop.3',
                     notes: '',
+                    name: '',
                     gitHead: '',
                     gitTag: '',
                     channel: 'next'
@@ -339,7 +341,8 @@ describe('@sebbo2002/semantic-release-docker', function () {
                     version: '8.2.7',
                     notes: '',
                     gitHead: '',
-                    gitTag: ''
+                    gitTag: '',
+                    name: ''
                 }
             });
 

@@ -1,8 +1,9 @@
 name: Test & Release
 on:
   push:
-    branches-ignore:
-      - gh-pages
+    branches:
+      - develop
+      - main
   pull_request: null
 
 jobs:
@@ -20,13 +21,7 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node }}
-      - name: 🔧 Setup npm cache
-        uses: actions/cache@v2
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
+          cache: 'npm'
       - name: 📦 Install dependencies
         run: npm ci
       - name: 🐳 Pull alpine image (for unit tests)
@@ -44,14 +39,7 @@ jobs:
       - name: 🔧 Setup node.js
         uses: actions/setup-node@v2
         with:
-          node-version: ${{ matrix.node }}
-      - name: 🔧 Setup npm cache
-        uses: actions/cache@v2
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
+          cache: 'npm'
       - name: 📦 Install dependencies
         run: npm ci
       - name: 🐳 Pull alpine image (for unit tests)
@@ -71,14 +59,7 @@ jobs:
       - name: 🔧 Setup node.js
         uses: actions/setup-node@v2
         with:
-          node-version: ${{ matrix.node }}
-      - name: 🔧 Setup npm cache
-        uses: actions/cache@v2
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
+          cache: 'npm'
       - name: 📦 Install dependencies
         run: npm ci
       - name: 🕵️‍♀️ Run license checker
@@ -87,6 +68,7 @@ jobs:
   release:
     name: Release
     runs-on: ubuntu-latest
+    concurrency: release
     env:
       PUSH_TO_DOCKERHUB: ${{ (github.repository != 'sebbo2002/js-template') && (secrets.DOCKERHUB_TOKEN != null) }}
     needs:
@@ -100,14 +82,7 @@ jobs:
       - name: 🔧 Setup node.js
         uses: actions/setup-node@v2
         with:
-          node-version: ${{ matrix.node }}
-      - name: 🔧 Setup npm cache
-        uses: actions/cache@v2
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
+          cache: 'npm'
       - name: 📦 Install dependencies
         run: npm ci
       - name: 📂 Create docs folder
