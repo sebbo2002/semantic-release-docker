@@ -1,4 +1,4 @@
-import {Context} from 'semantic-release';
+import { Context } from 'semantic-release';
 import {
     MajorAndMinorPart,
     NormalizedPluginConfigTags,
@@ -9,6 +9,7 @@ import {
     PublishResponse
 } from './types';
 import execa from 'execa';
+import { lookup } from 'dns';
 
 export {
     PluginConfig,
@@ -31,15 +32,13 @@ export function parseConfig (config: PluginConfig): NormalizedPluginConfig {
         }
     };
 
-    if(typeof config.images === 'string') {
+    if (typeof config.images === 'string') {
         result.images.push(config.images);
-    }
-    else if(Array.isArray(config.images)) {
+    } else if (Array.isArray(config.images)) {
         config.images
             .filter(image => typeof image === 'string')
             .forEach(image => result.images.push(image));
-    }
-    else {
+    } else {
         throw new Error('Configuration invalid: No image defined!');
     }
 
@@ -58,19 +57,19 @@ export function getBaseImage (input: string): string {
     let p = input.split('@')[0].split(':');
 
     // it's a ":port"
-    if(p[1] && p[1].includes('/')) {
+    if (p[1] && p[1].includes('/')) {
         p = [p[0] + ':' + p[1], p[2]];
     }
 
     return p[0];
 }
 
-export function isPreRelease(context: Context): boolean {
+export function isPreRelease (context: Context): boolean {
     return Boolean(context.nextRelease && context.nextRelease.version.includes('-'));
 }
 
-export function getMajorAndMinorPart(version: string | undefined): MajorAndMinorPart {
-    if(!version) {
+export function getMajorAndMinorPart (version: string | undefined): MajorAndMinorPart {
+    if (!version) {
         return {
             major: null,
             minor: null
@@ -87,7 +86,7 @@ export function getMajorAndMinorPart(version: string | undefined): MajorAndMinor
 export function getTagTasks (config: NormalizedPluginConfig, context: Context): TagTask[] {
     const result: TagTask[] = [];
 
-    if(!context.nextRelease) {
+    if (!context.nextRelease) {
         return [];
     }
 
@@ -103,8 +102,8 @@ export function getTagTasks (config: NormalizedPluginConfig, context: Context): 
             });
         }
 
-        if(!isPreRelease(context)) {
-            const {major, minor} = getMajorAndMinorPart(version);
+        if (!isPreRelease(context)) {
+            const { major, minor } = getMajorAndMinorPart(version);
 
             // latest
             if (config.tag.latest) {
@@ -144,11 +143,28 @@ export function getTagTasks (config: NormalizedPluginConfig, context: Context): 
     return result;
 }
 
-export async function docker(command: string[]): Promise<void> {
+export function getUrlFromImage (image: string): string | undefined {
+    const parts = getBaseImage(image).split('/');
+    if (parts[0] === 'ghcr.io' && parts.length === 3) {
+        return `https://github.com/${parts[1]}/${parts[2]}/pkgs/container/${parts[2]}`;
+    }
+    if (parts[0] === 'registry.gitlab.com' && parts.length >= 3) {
+        return `https://gitlab.com/${parts[1]}/${parts[2]}/container_registry`;
+    }
+
+    const couldBeAHostname = parts[0].includes('.');
+    if (!couldBeAHostname && parts.length === 2) {
+        return `https://hub.docker.com/r/${parts[0]}/${parts[1]}/tags`;
+    }
+    if (!couldBeAHostname && parts.length === 1) {
+        return `https://hub.docker.com/_/${parts[0]}/tags`;
+    }
+}
+
+export async function docker (command: string[]): Promise<void> {
     try {
         await execa('docker', command);
-    }
-    catch(error) {
+    } catch (error) {
         if (typeof error === 'object' && error !== null && 'command' in error && 'message' in error) {
 
             // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -160,27 +176,27 @@ export async function docker(command: string[]): Promise<void> {
     }
 }
 
-export async function tagImage(input: string, output: string): Promise<void> {
+export async function tagImage (input: string, output: string): Promise<void> {
     await docker(['tag', input, output]);
 }
 
-export async function pushImage(image: string): Promise<void> {
+export async function pushImage (image: string): Promise<void> {
     await docker(['push', image]);
 }
 
 export async function publish (pluginConfig: PluginConfig, context: Context): Promise<boolean | PublishResponse> {
-    if(!context.nextRelease) {
+    if (!context.nextRelease) {
         context.logger.log('No release schedules, so no images to tag.');
         return false;
     }
 
     const config = parseConfig(pluginConfig);
     const tasks = getTagTasks(config, context);
-    if(!tasks.length) {
+    if (!tasks.length) {
         return false;
     }
 
-    for(const task of tasks) {
+    for (const task of tasks) {
         context.logger.log(`Tag ${task.input} → ${task.output}`);
         await tagImage(task.input, task.output);
 
@@ -192,7 +208,7 @@ export async function publish (pluginConfig: PluginConfig, context: Context): Pr
     const firstTask = tasks[0];
     return {
         name: `Docker container (${firstTask.output})`,
-        url: firstTask.output,
+        url: getUrlFromImage(firstTask.output),
         channel
     };
 }
