@@ -36,6 +36,6 @@ export interface TagTask {
 
 export interface PublishResponse {
     name: string;
-    url: string;
+    url?: string;
     channel?: string;
 }

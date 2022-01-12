@@ -1,6 +1,15 @@
 'use strict';
 
-import {getBaseImage, getMajorAndMinorPart, getTagTasks, isPreRelease, parseConfig, tagImage, publish} from '../../src/lib';
+import {
+    getBaseImage,
+    getMajorAndMinorPart,
+    getTagTasks,
+    isPreRelease,
+    parseConfig,
+    tagImage,
+    publish,
+    getUrlFromImage
+} from '../../src/lib';
 import assert from 'assert';
 
 describe('@sebbo2002/semantic-release-docker', function () {
@@ -299,6 +308,41 @@ describe('@sebbo2002/semantic-release-docker', function () {
                     output: 'sebbo2002/test:next'
                 }
             ]);
+        });
+    });
+    describe('getUrlFromImage', function () {
+        it('alpine', function () {
+            assert.strictEqual(getUrlFromImage('alpine'), 'https://hub.docker.com/_/alpine/tags');
+        });
+        it('ubuntu:14', function () {
+            assert.strictEqual(getUrlFromImage('ubuntu:14'), 'https://hub.docker.com/_/ubuntu/tags');
+        });
+        it('sebbo2002/gitlab-badges:14.04', function () {
+            assert.strictEqual(getUrlFromImage('sebbo2002/gitlab-badges:14.04'), 'https://hub.docker.com/r/sebbo2002/gitlab-badges/tags');
+        });
+        it('ubuntu@14', function () {
+            assert.strictEqual(getUrlFromImage('ubuntu@14'), 'https://hub.docker.com/_/ubuntu/tags');
+        });
+        it('sebbo2002/gitlab-badges@14.04', function () {
+            assert.strictEqual(getUrlFromImage('sebbo2002/gitlab-badges@14.04'), 'https://hub.docker.com/r/sebbo2002/gitlab-badges/tags');
+        });
+        it('alpine@sha256:aaaaf56b44807c64d294e6c8059b479f35350b454492398225034174808d1726', function () {
+            assert.strictEqual(getUrlFromImage('alpine@sha256:aaaaf56b44807c64d294e6c8059b479f35350b454492398225034174808d1726'), 'https://hub.docker.com/_/alpine/tags');
+        });
+        it('ghcr.io/sebbo2002/ble2mqtt:ecf33e870c318e4f8a17555aeac14ab1dfaaaddd', function () {
+            assert.strictEqual(getUrlFromImage('ghcr.io/sebbo2002/ble2mqtt:ecf33e870c318e4f8a17555aeac14ab1dfaaaddd'), 'https://github.com/sebbo2002/ble2mqtt/pkgs/container/ble2mqtt');
+        });
+        it('ghcr.io/sebbo2002/ble2mqtt@sha256:175c648b777d70f829196d67019ded98d74cf28f3fef08b00998b10485705e68', function () {
+            assert.strictEqual(getUrlFromImage('ghcr.io/sebbo2002/ble2mqtt@sha256:175c648b777d70f829196d67019ded98d74cf28f3fef08b00998b10485705e68'), 'https://github.com/sebbo2002/ble2mqtt/pkgs/container/ble2mqtt');
+        });
+        it('registry.gitlab.com/gitlab-org/gitlab-runner/ci:1.10.8-1', function () {
+            assert.strictEqual(getUrlFromImage('registry.gitlab.com/gitlab-org/gitlab-runner/ci:1.10.8-1'), 'https://gitlab.com/gitlab-org/gitlab-runner/container_registry');
+        });
+        it('registry.gitlab.com/gitlab-org/gitlab-runner/ci@sha256:5abfd2a06fbc535581350290e5067cf49f908199b60e850015066f38c549622e', function () {
+            assert.strictEqual(getUrlFromImage('registry.gitlab.com/gitlab-org/gitlab-runner/ci@sha256:5abfd2a06fbc535581350290e5067cf49f908199b60e850015066f38c549622e'), 'https://gitlab.com/gitlab-org/gitlab-runner/container_registry');
+        });
+        it('containers.topsecret.evil.corp/server:2', function () {
+            assert.strictEqual(getUrlFromImage('containers.topsecret.evil.corp/server:2'), undefined);
         });
     });
     describe('tagImage', function() {

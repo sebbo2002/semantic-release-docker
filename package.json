@@ -49,7 +49,7 @@
     "coverage": "nyc mocha",
     "license-check": "license-checker --production --summary",
     "lint": "eslint . --ext .ts,.json",
-    "test": "mocha"
+    "test": "docker pull alpine:latest && mocha"
   },
   "version": "1.0.0-develop.1"
 }
