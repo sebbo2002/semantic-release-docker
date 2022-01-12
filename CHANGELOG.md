@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/sebbo2002/semantic-release-docker/compare/v1.0.1...v1.1.0) (2022-01-12)
+
+
+### Features
+
+* generate meaningful links for the published container ([c4fef0f](https://github.com/sebbo2002/semantic-release-docker/commit/c4fef0f25e3d1df4629370321afcf9c11c1dc787))
+
 # [1.1.0-develop.1](https://github.com/sebbo2002/semantic-release-docker/compare/v1.0.1...v1.1.0-develop.1) (2022-01-12)
 
 
