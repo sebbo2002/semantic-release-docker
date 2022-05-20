@@ -24,6 +24,8 @@ jobs:
           cache: 'npm'
       - name: 📦 Install dependencies
         run: npm ci
+      - name: 🐳 Pull alpine image (for unit tests)
+        run: docker pull alpine
       - name: ⏳ Run tests
         run: npm run test
 
@@ -40,6 +42,8 @@ jobs:
           cache: 'npm'
       - name: 📦 Install dependencies
         run: npm ci
+      - name: 🐳 Pull alpine image (for unit tests)
+        run: docker pull alpine
       - name: 🔍 Run linter
         run: npm run lint
       - name: ⚙️ Build project
@@ -281,34 +285,8 @@ jobs:
         run: npm ci
       - name: 📂 Create docs folder
         run: mkdir ./docs
-      - name: 🔐 Login to GitHub Container Registry
-        uses: docker/login-action@v2
-        with:
-          registry: ghcr.io
-          username: ${{ github.repository_owner }}
-          password: ${{ secrets.GITHUB_TOKEN }}
-      - name: 🔐 Login to DockerHub
-        uses: docker/login-action@v2
-        with:
-          username: ${{ github.repository_owner }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-      - name: ⬇️ Pull GitHub Containers
-        id: github
-        run: |
-          docker pull "${IMAGE}@${DIGEST}"
-          echo "::set-output name=image::${IMAGE}@${DIGEST}"
-        env:
-          IMAGE: ghcr.io/${{ github.repository }}
-          DIGEST: ${{ needs.docker-image.outputs.digest }}
-      - name: ⬇️ Pull Docker Hub Containers
-        if: ${{ env.PUSH_TO_DOCKERHUB == 'true' }}
-        id: dockerhub
-        run: |
-          docker pull "${IMAGE}@${DIGEST}"
-          echo "::set-output name=image::${IMAGE}@${DIGEST}"
-        env:
-          IMAGE: ${{ github.repository }}
-          DIGEST: ${{ needs.docker-image.outputs.digest }}
+      - name: 🐳 Pull alpine image (for unit tests)
+        run: docker pull alpine
       - name: 🪄 Run semantic-release
         run: BRANCH=${GITHUB_REF#refs/heads/} npx semantic-release
         env:
