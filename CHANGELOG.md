@@ -1,3 +1,15 @@
+# [2.0.0-develop.1](https://github.com/sebbo2002/semantic-release-docker/compare/v1.1.4-develop.1...v2.0.0-develop.1) (2022-06-28)
+
+
+### Build System
+
+* Native ESM support ([7b86a4f](https://github.com/sebbo2002/semantic-release-docker/commit/7b86a4f1187c387a3a5792e1fb72d822b04e3631))
+
+
+### BREAKING CHANGES
+
+* Only Support for node.js ^12.20.0 || >=14.13.1
+
 ## [1.1.4-develop.1](https://github.com/sebbo2002/semantic-release-docker/compare/v1.1.3...v1.1.4-develop.1) (2022-06-09)
 
 ## [1.1.3](https://github.com/sebbo2002/semantic-release-docker/compare/v1.1.2...v1.1.3) (2022-05-14)
