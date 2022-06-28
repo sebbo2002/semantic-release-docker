@@ -1,3 +1,15 @@
+# [2.0.0-develop.2](https://github.com/sebbo2002/semantic-release-docker/compare/v2.0.0-develop.1...v2.0.0-develop.2) (2022-06-28)
+
+
+### Build System
+
+* **deps:** Upgrade to execa 6.0 ([8654327](https://github.com/sebbo2002/semantic-release-docker/commit/8654327029acf5d3abd20c32d67aaca533dcaa44))
+
+
+### BREAKING CHANGES
+
+* **deps:** Only Support for node.js ^12.20.0 || >=14.13.1
+
 # [2.0.0-develop.1](https://github.com/sebbo2002/semantic-release-docker/compare/v1.1.4-develop.1...v2.0.0-develop.1) (2022-06-28)
 
 
