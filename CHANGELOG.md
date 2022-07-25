@@ -1,3 +1,29 @@
+# [2.0.0-develop.2](https://github.com/sebbo2002/semantic-release-docker/compare/v2.0.0-develop.1...v2.0.0-develop.2) (2022-06-28)
+
+
+### Build System
+
+* **deps:** Upgrade to execa 6.0 ([8654327](https://github.com/sebbo2002/semantic-release-docker/commit/8654327029acf5d3abd20c32d67aaca533dcaa44))
+
+
+### BREAKING CHANGES
+
+* **deps:** Only Support for node.js ^12.20.0 || >=14.13.1
+
+# [2.0.0-develop.1](https://github.com/sebbo2002/semantic-release-docker/compare/v1.1.4-develop.1...v2.0.0-develop.1) (2022-06-28)
+
+
+### Build System
+
+* Native ESM support ([7b86a4f](https://github.com/sebbo2002/semantic-release-docker/commit/7b86a4f1187c387a3a5792e1fb72d822b04e3631))
+
+
+### BREAKING CHANGES
+
+* Only Support for node.js ^12.20.0 || >=14.13.1
+
+## [1.1.4-develop.1](https://github.com/sebbo2002/semantic-release-docker/compare/v1.1.3...v1.1.4-develop.1) (2022-06-09)
+
 ## [1.1.3](https://github.com/sebbo2002/semantic-release-docker/compare/v1.1.2...v1.1.3) (2022-05-14)
 
 ## [1.1.3-develop.3](https://github.com/sebbo2002/semantic-release-docker/compare/v1.1.3-develop.2...v1.1.3-develop.3) (2022-05-13)
@@ -87,37 +113,3 @@
 ### BREAKING CHANGES
 
 * Removed support for node.js v10
-
-# [1.0.0-develop.3](https://github.com/sebbo2002/js-template-test/compare/v1.0.0-develop.2...v1.0.0-develop.3) (2021-05-08)
-
-
-### Bug Fixes
-
-* **CI:** Fix npm github release ([8355e8b](https://github.com/sebbo2002/js-template-test/commit/8355e8b3658b534ad359d03147d6b6d559de3340))
-
-# [1.0.0-develop.2](https://github.com/sebbo2002/js-template-test/compare/v1.0.0-develop.1...v1.0.0-develop.2) (2021-05-08)
-
-
-### Bug Fixes
-
-* Docker Tags ([7d8dcd5](https://github.com/sebbo2002/js-template-test/commit/7d8dcd579f3d796e6a07d77e7da8700eb44a4ce0))
-
-# 1.0.0-develop.1 (2021-05-08)
-
-
-### Bug Fixes
-
-* Cannot read property 'env' of undefined ([7f64b7a](https://github.com/sebbo2002/js-template-test/commit/7f64b7a9c3b8f42dd3f608be0251fa1fdaad32d8))
-* **CI:** Fix docker build ([7da7438](https://github.com/sebbo2002/js-template-test/commit/7da74380621eed1134a87d0c01d4da8b45e58525))
-
-
-### Features
-
-* test ([2008ee5](https://github.com/sebbo2002/js-template-test/commit/2008ee563dab2203ac6c51d55e06631af86b58b2))
-
-# 1.0.0-develop.1 (2021-05-07)
-
-
-### Features
-
-* test ([2008ee5](https://github.com/sebbo2002/js-template-test/commit/2008ee563dab2203ac6c51d55e06631af86b58b2))
