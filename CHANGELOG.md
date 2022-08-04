@@ -1,3 +1,12 @@
+## [2.0.1-develop.2](https://github.com/sebbo2002/semantic-release-docker/compare/v2.0.1-develop.1...v2.0.1-develop.2) (2022-08-04)
+
+## [2.0.1-develop.1](https://github.com/sebbo2002/semantic-release-docker/compare/v2.0.0...v2.0.1-develop.1) (2022-08-04)
+
+
+### Bug Fixes
+
+* Reverse ESM change ([a26ccc1](https://github.com/sebbo2002/semantic-release-docker/commit/a26ccc174dd8cf37ad9f45fd3a707f7ba5ff6401)), closes [#66](https://github.com/sebbo2002/semantic-release-docker/issues/66)
+
 # [2.0.0](https://github.com/sebbo2002/semantic-release-docker/compare/v1.1.3...v2.0.0) (2022-07-25)
 
 

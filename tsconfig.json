@@ -2,7 +2,7 @@
     "compilerOptions": {
         "declaration": true,
         "esModuleInterop": true,
-        "module": "es2020",
+        "module": "none",
         "moduleResolution": "node",
         "outDir": "./dist",
         "sourceMap": true,

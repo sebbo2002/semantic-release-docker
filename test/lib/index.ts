@@ -9,7 +9,7 @@ import {
     tagImage,
     publish,
     getUrlFromImage
-} from '../../src/lib/index.js';
+} from '../../src/lib';
 import assert from 'assert';
 
 describe('@sebbo2002/semantic-release-docker', function () {
@@ -110,10 +110,28 @@ describe('@sebbo2002/semantic-release-docker', function () {
         it('with release', function () {
             const result = isPreRelease({
                 logger: {
+                    await: () => {},
+                    complete: () => {},
+                    debug: () => {},
+                    error: () => {},
+                    fatal: () => {},
+                    fav: () => {},
+                    info: () => {},
                     log: () => {},
-                    error: () => {}
+                    note: () => {},
+                    pause: () => {},
+                    pending: () => {},
+                    star: () => {},
+                    start: () => {},
+                    success: () => {},
+                    wait: () => {},
+                    warn: () => {},
+                    watch: () => {}
                 },
                 env: {},
+                branch: {
+                    name: 'develop'
+                },
                 nextRelease: {
                     type: 'patch',
                     version: '8.2.6',
@@ -129,10 +147,28 @@ describe('@sebbo2002/semantic-release-docker', function () {
         it('with pre-release', function () {
             const result = isPreRelease({
                 logger: {
+                    await: () => {},
+                    complete: () => {},
+                    debug: () => {},
+                    error: () => {},
+                    fatal: () => {},
+                    fav: () => {},
+                    info: () => {},
                     log: () => {},
-                    error: () => {}
+                    note: () => {},
+                    pause: () => {},
+                    pending: () => {},
+                    star: () => {},
+                    start: () => {},
+                    success: () => {},
+                    wait: () => {},
+                    warn: () => {},
+                    watch: () => {}
                 },
                 env: {},
+                branch: {
+                    name: 'develop'
+                },
                 nextRelease: {
                     type: 'prerelease',
                     version: '8.2.6-develop.1',
@@ -148,10 +184,28 @@ describe('@sebbo2002/semantic-release-docker', function () {
         it('without release', function () {
             const result = isPreRelease({
                 logger: {
+                    await: () => {},
+                    complete: () => {},
+                    debug: () => {},
+                    error: () => {},
+                    fatal: () => {},
+                    fav: () => {},
+                    info: () => {},
                     log: () => {},
-                    error: () => {}
+                    note: () => {},
+                    pause: () => {},
+                    pending: () => {},
+                    star: () => {},
+                    start: () => {},
+                    success: () => {},
+                    wait: () => {},
+                    warn: () => {},
+                    watch: () => {}
                 },
-                env: {}
+                env: {},
+                branch: {
+                    name: 'develop'
+                }
             });
 
             assert.strictEqual(result, false);
@@ -190,10 +244,28 @@ describe('@sebbo2002/semantic-release-docker', function () {
                 }
             }, {
                 logger: {
+                    await: () => {},
+                    complete: () => {},
+                    debug: () => {},
+                    error: () => {},
+                    fatal: () => {},
+                    fav: () => {},
+                    info: () => {},
                     log: () => {},
-                    error: () => {}
+                    note: () => {},
+                    pause: () => {},
+                    pending: () => {},
+                    star: () => {},
+                    start: () => {},
+                    success: () => {},
+                    wait: () => {},
+                    warn: () => {},
+                    watch: () => {}
                 },
-                env: {}
+                env: {},
+                branch: {
+                    name: 'develop'
+                }
             });
         });
         it('patch release', function () {
@@ -211,10 +283,28 @@ describe('@sebbo2002/semantic-release-docker', function () {
                 }
             }, {
                 logger: {
+                    await: () => {},
+                    complete: () => {},
+                    debug: () => {},
+                    error: () => {},
+                    fatal: () => {},
+                    fav: () => {},
+                    info: () => {},
                     log: () => {},
-                    error: () => {}
+                    note: () => {},
+                    pause: () => {},
+                    pending: () => {},
+                    star: () => {},
+                    start: () => {},
+                    success: () => {},
+                    wait: () => {},
+                    warn: () => {},
+                    watch: () => {}
                 },
                 env: {},
+                branch: {
+                    name: 'develop'
+                },
                 nextRelease: {
                     type: 'patch',
                     version: '8.2.6',
@@ -275,10 +365,28 @@ describe('@sebbo2002/semantic-release-docker', function () {
                 }
             }, {
                 logger: {
+                    await: () => {},
+                    complete: () => {},
+                    debug: () => {},
+                    error: () => {},
+                    fatal: () => {},
+                    fav: () => {},
+                    info: () => {},
                     log: () => {},
-                    error: () => {}
+                    note: () => {},
+                    pause: () => {},
+                    pending: () => {},
+                    star: () => {},
+                    start: () => {},
+                    success: () => {},
+                    wait: () => {},
+                    warn: () => {},
+                    watch: () => {}
                 },
                 env: {},
+                branch: {
+                    name: 'develop'
+                },
                 nextRelease: {
                     type: 'prerelease',
                     version: '8.2.6-develop.3',
@@ -356,10 +464,28 @@ describe('@sebbo2002/semantic-release-docker', function () {
                 images: []
             }, {
                 logger: {
+                    await: () => {},
+                    complete: () => {},
+                    debug: () => {},
+                    error: () => {},
+                    fatal: () => {},
+                    fav: () => {},
+                    info: () => {},
                     log: () => {},
-                    error: () => {}
+                    note: () => {},
+                    pause: () => {},
+                    pending: () => {},
+                    star: () => {},
+                    start: () => {},
+                    success: () => {},
+                    wait: () => {},
+                    warn: () => {},
+                    watch: () => {}
                 },
-                env: {}
+                env: {},
+                branch: {
+                    name: 'develop'
+                }
             });
 
             assert.strictEqual(result, false);
@@ -376,10 +502,28 @@ describe('@sebbo2002/semantic-release-docker', function () {
                 }
             }, {
                 logger: {
+                    await: () => {},
+                    complete: () => {},
+                    debug: () => {},
+                    error: () => {},
+                    fatal: () => {},
+                    fav: () => {},
+                    info: () => {},
                     log: () => {},
-                    error: () => {}
+                    note: () => {},
+                    pause: () => {},
+                    pending: () => {},
+                    star: () => {},
+                    start: () => {},
+                    success: () => {},
+                    wait: () => {},
+                    warn: () => {},
+                    watch: () => {}
                 },
                 env: {},
+                branch: {
+                    name: 'develop'
+                },
                 nextRelease: {
                     type: 'patch',
                     version: '8.2.7',
