@@ -1,13 +1,13 @@
 <?xml version="1.0" ?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
-<coverage lines-valid="217" lines-covered="197" line-rate="0.9078" branches-valid="56" branches-covered="51" branch-rate="0.9107" timestamp="1658772479416" complexity="0" version="0.1">
+<coverage lines-valid="217" lines-covered="196" line-rate="0.9031999999999999" branches-valid="56" branches-covered="51" branch-rate="0.9107" timestamp="1659628679623" complexity="0" version="0.1">
   <sources>
     <source>/home/runner/work/semantic-release-docker/semantic-release-docker</source>
   </sources>
   <packages>
-    <package name="main" line-rate="0.9078" branch-rate="0.9107">
+    <package name="main" line-rate="0.9031999999999999" branch-rate="0.9107">
       <classes>
-        <class name="index.ts" filename="src/lib/index.ts" line-rate="0.9078" branch-rate="0.9107">
+        <class name="index.ts" filename="src/lib/index.ts" line-rate="0.9031999999999999" branch-rate="0.9107">
           <methods>
             <method name="parseConfig" hits="5" signature="()V">
               <lines>
@@ -82,7 +82,7 @@
             <line number="19" hits="1" branch="false"/>
             <line number="20" hits="1" branch="false"/>
             <line number="21" hits="1" branch="false"/>
-            <line number="22" hits="1" branch="true" condition-coverage="100% (1/1)"/>
+            <line number="22" hits="5" branch="true" condition-coverage="100% (1/1)"/>
             <line number="23" hits="5" branch="false"/>
             <line number="24" hits="5" branch="false"/>
             <line number="25" hits="5" branch="false"/>
@@ -115,7 +115,7 @@
             <line number="52" hits="4" branch="false"/>
             <line number="53" hits="4" branch="false"/>
             <line number="54" hits="1" branch="false"/>
-            <line number="55" hits="1" branch="true" condition-coverage="100% (1/1)"/>
+            <line number="55" hits="25" branch="true" condition-coverage="100% (1/1)"/>
             <line number="56" hits="25" branch="false"/>
             <line number="57" hits="25" branch="false"/>
             <line number="58" hits="25" branch="false"/>
@@ -126,11 +126,11 @@
             <line number="63" hits="25" branch="false"/>
             <line number="64" hits="25" branch="false"/>
             <line number="65" hits="1" branch="false"/>
-            <line number="66" hits="1" branch="true" condition-coverage="100% (1/1)"/>
+            <line number="66" hits="8" branch="true" condition-coverage="100% (1/1)"/>
             <line number="67" hits="8" branch="true" condition-coverage="100% (1/1)"/>
             <line number="68" hits="8" branch="false"/>
             <line number="69" hits="1" branch="false"/>
-            <line number="70" hits="1" branch="true" condition-coverage="100% (1/1)"/>
+            <line number="70" hits="6" branch="true" condition-coverage="100% (1/1)"/>
             <line number="71" hits="6" branch="true" condition-coverage="100% (1/1)"/>
             <line number="72" hits="1" branch="false"/>
             <line number="73" hits="1" branch="false"/>
@@ -145,7 +145,7 @@
             <line number="82" hits="5" branch="false"/>
             <line number="83" hits="5" branch="false"/>
             <line number="84" hits="1" branch="false"/>
-            <line number="85" hits="1" branch="true" condition-coverage="100% (1/1)"/>
+            <line number="85" hits="4" branch="true" condition-coverage="100% (1/1)"/>
             <line number="86" hits="4" branch="false"/>
             <line number="87" hits="4" branch="false"/>
             <line number="88" hits="4" branch="true" condition-coverage="100% (1/1)"/>
@@ -205,7 +205,7 @@
             <line number="142" hits="3" branch="false"/>
             <line number="143" hits="3" branch="false"/>
             <line number="144" hits="1" branch="false"/>
-            <line number="145" hits="1" branch="true" condition-coverage="100% (1/1)"/>
+            <line number="145" hits="11" branch="true" condition-coverage="100% (1/1)"/>
             <line number="146" hits="11" branch="false"/>
             <line number="147" hits="11" branch="true" condition-coverage="100% (2/2)"/>
             <line number="148" hits="2" branch="false"/>
@@ -242,11 +242,11 @@
             <line number="179" hits="1" branch="false"/>
             <line number="180" hits="1" branch="false"/>
             <line number="181" hits="1" branch="false"/>
-            <line number="182" hits="1" branch="false"/>
+            <line number="182" hits="0" branch="false"/>
             <line number="183" hits="0" branch="false"/>
             <line number="184" hits="0" branch="false"/>
             <line number="185" hits="1" branch="false"/>
-            <line number="186" hits="1" branch="true" condition-coverage="100% (1/1)"/>
+            <line number="186" hits="2" branch="true" condition-coverage="100% (1/1)"/>
             <line number="187" hits="2" branch="true" condition-coverage="100% (1/1)"/>
             <line number="188" hits="1" branch="false"/>
             <line number="189" hits="1" branch="false"/>
