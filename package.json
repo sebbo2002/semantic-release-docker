@@ -4,7 +4,7 @@
     "url": "https://github.com/sebbo2002/semantic-release-docker/issues"
   },
   "dependencies": {
-    "execa": "^6.1.0"
+    "execa": "^5.1.1"
   },
   "description": "Plugin for semantic-release that tags a previously built Docker image and pushes it to one or more Docker registries",
   "devDependencies": {
@@ -21,11 +21,11 @@
     "c8": "^7.12.0",
     "eslint": "^8.19.0",
     "eslint-plugin-jsonc": "^2.3.1",
-    "esm": "^3.2.25",
     "license-checker": "^25.0.1",
     "mocha": "^10.0.0",
     "mochawesome": "^7.1.3",
     "semantic-release-license": "^1.0.3",
+    "source-map-support": "^0.5.21",
     "ts-node": "^10.8.2",
     "typedoc": "^0.23.5",
     "typescript": "^4.7.4"
@@ -33,12 +33,12 @@
   "engines": {
     "node": "^12.20.0 || >=14.13.1"
   },
-  "exports": "./dist/index.js",
   "files": [
     "/dist"
   ],
   "homepage": "https://github.com/sebbo2002/semantic-release-docker#readme",
   "license": "MIT",
+  "main": "dist/index.js",
   "name": "@sebbo2002/semantic-release-docker",
   "repository": {
     "type": "git",
@@ -52,6 +52,5 @@
     "lint": "eslint . --ext .ts,.json",
     "test": "docker pull alpine:latest && mocha"
   },
-  "type": "module",
   "version": "1.0.0-develop.1"
 }

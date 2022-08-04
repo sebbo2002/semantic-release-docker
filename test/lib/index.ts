@@ -9,7 +9,7 @@ import {
     tagImage,
     publish,
     getUrlFromImage
-} from '../../src/lib/index.js';
+} from '../../src/lib';
 import assert from 'assert';
 
 describe('@sebbo2002/semantic-release-docker', function () {
