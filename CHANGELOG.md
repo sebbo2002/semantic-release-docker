@@ -1,3 +1,10 @@
+# [2.1.0-develop.1](https://github.com/sebbo2002/semantic-release-docker/compare/v2.0.2-develop.1...v2.1.0-develop.1) (2022-10-14)
+
+
+### Features
+
+* Add regclient support for multi-OS images ([81d9031](https://github.com/sebbo2002/semantic-release-docker/commit/81d9031d1f686c926453b4ee7f68e0209d1eb35d))
+
 ## [2.0.2-develop.1](https://github.com/sebbo2002/semantic-release-docker/compare/v2.0.1...v2.0.2-develop.1) (2022-09-12)
 
 ## [2.0.1](https://github.com/sebbo2002/semantic-release-docker/compare/v2.0.0...v2.0.1) (2022-08-04)
