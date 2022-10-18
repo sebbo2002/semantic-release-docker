@@ -8,7 +8,9 @@ import {
     parseConfig,
     tagImage,
     publish,
-    getUrlFromImage
+    getUrlFromImage,
+    exec,
+    isRegCtlAvailable
 } from '../../src/lib';
 import assert from 'assert';
 
@@ -451,6 +453,23 @@ describe('@sebbo2002/semantic-release-docker', function () {
         });
         it('containers.topsecret.evil.corp/server:2', function () {
             assert.strictEqual(getUrlFromImage('containers.topsecret.evil.corp/server:2'), undefined);
+        });
+    });
+    describe('exec', function () {
+        it('should run commands', async function () {
+            assert.strictEqual(await exec('echo', ['hello']), undefined);
+        });
+        it('should fail on exit code > 0', async function () {
+            assert.rejects(async () => {
+                assert.strictEqual(await exec('exit', ['1']), undefined);
+            }, /Unable to run "exit 1": Command failed with ENOENT: exit 1/);
+        });
+    });
+    describe('isRegCtlAvailable', function () {
+        it('should run command without failing (result unknown)', async function () {
+            const result = await isRegCtlAvailable();
+            assert.ok(typeof result, 'boolean');
+            assert.strictEqual(await isRegCtlAvailable(), result);
         });
     });
     describe('tagImage', function() {

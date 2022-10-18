@@ -19,6 +19,8 @@ export {
     TagTask
 };
 
+let IS_REGCTL_AVAILABLE: boolean | undefined= undefined;
+
 export function parseConfig (config: PluginConfig): NormalizedPluginConfig {
     const result: NormalizedPluginConfig = {
         images: [],
@@ -160,9 +162,9 @@ export function getUrlFromImage (image: string): string | undefined {
     }
 }
 
-export async function docker (command: string[]): Promise<void> {
+export async function exec (file: string, args: string[]): Promise<void> {
     try {
-        await execa('docker', command);
+        await execa(file, args);
     } catch (error) {
         if (typeof error === 'object' && error !== null && 'command' in error && 'message' in error) {
 
@@ -170,17 +172,37 @@ export async function docker (command: string[]): Promise<void> {
             // @ts-ignore
             throw new Error(`Unable to run "${error.command}": ${error.message}`);
         } else {
-            throw new Error(`Unable to run "${command.join(' ')}": ${error}`);
+            throw new Error(`Unable to run "${args.join(' ')}": ${error}`);
         }
     }
 }
 
+export async function isRegCtlAvailable (): Promise<boolean> {
+    if(IS_REGCTL_AVAILABLE !== undefined) {
+        return IS_REGCTL_AVAILABLE;
+    }
+
+    try {
+        await execa('which', ['regctl']);
+        IS_REGCTL_AVAILABLE = true;
+        return true;
+    }
+    catch(error) {
+        IS_REGCTL_AVAILABLE = false;
+        return false;
+    }
+}
+
 export async function tagImage (input: string, output: string): Promise<void> {
-    await docker(['tag', input, output]);
+    await exec('docker', ['tag', input, output]);
 }
 
 export async function pushImage (image: string): Promise<void> {
-    await docker(['push', image]);
+    await exec('docker', ['push', image]);
+}
+
+export async function copyImage (input: string, output: string): Promise<void> {
+    await exec('regctl', ['image', 'copy', input, output]);
 }
 
 export async function publish (pluginConfig: PluginConfig, context: Context): Promise<boolean | PublishResponse> {
@@ -196,6 +218,19 @@ export async function publish (pluginConfig: PluginConfig, context: Context): Pr
     }
 
     for (const task of tasks) {
+        if(await isRegCtlAvailable()) {
+            context.logger.log(`Copy with regctl ${task.input} → ${task.output}`);
+
+            try {
+                await copyImage(task.input, task.output);
+                continue;
+            }
+            catch(error) {
+                context.logger.error(error);
+                context.logger.log('Retry without regctl…');
+            }
+        }
+
         context.logger.log(`Tag ${task.input} → ${task.output}`);
         await tagImage(task.input, task.output);
 

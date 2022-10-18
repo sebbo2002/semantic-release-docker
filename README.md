@@ -3,7 +3,8 @@
 [![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](LICENSE)
 
 Small plugin for semantic-release that tags a previously built Docker image and pushes it to one or more Docker
-registries. It is assumed that the login has already happened before.
+registries. It is assumed that the login has already happened before. Supports copying / tagging of multi-platform 
+images if [regclient](https://github.com/regclient/regclient) is installed in the PATH.
 
 
 ## 📦 Installation
