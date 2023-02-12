@@ -1,3 +1,15 @@
+# [3.0.0-develop.1](https://github.com/sebbo2002/semantic-release-docker/compare/v2.1.1-develop.1...v3.0.0-develop.1) (2023-02-12)
+
+
+### Build System
+
+* Deprecate node.js 12 ([426588b](https://github.com/sebbo2002/semantic-release-docker/commit/426588b4bb7bde2924bbc92006ca839e960872e1))
+
+
+### BREAKING CHANGES
+
+* From now on, only node.js ^14.8.0 || >=16.0.0 are supported
+
 ## [2.1.1-develop.1](https://github.com/sebbo2002/semantic-release-docker/compare/v2.1.0...v2.1.1-develop.1) (2022-12-04)
 
 # [2.1.0](https://github.com/sebbo2002/semantic-release-docker/compare/v2.0.1...v2.1.0) (2022-10-18)
