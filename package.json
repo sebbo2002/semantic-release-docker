@@ -27,30 +27,34 @@
     "semantic-release-license": "^1.0.3",
     "source-map-support": "^0.5.21",
     "ts-node": "^10.8.2",
+    "tsup": "^6.7.0",
     "typedoc": "^0.23.28",
     "typescript": "^5.0.2"
   },
   "engines": {
     "node": "^14.8.0 || >=16.0.0"
   },
+  "exports": "./dist/index.js",
   "files": [
     "/dist"
   ],
   "homepage": "https://github.com/sebbo2002/semantic-release-docker#readme",
   "license": "MIT",
-  "main": "dist/index.js",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
   "name": "@sebbo2002/semantic-release-docker",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sebbo2002/semantic-release-docker.git"
   },
   "scripts": {
-    "build": "tsc",
+    "build": "tsup",
     "build-all": "./.github/workflows/build.sh",
     "coverage": "c8 mocha",
     "license-check": "license-checker --production --summary",
     "lint": "eslint . --ext .ts,.json",
     "test": "docker pull alpine:latest && mocha"
   },
+  "type": "module",
   "version": "1.0.0-develop.1"
 }
