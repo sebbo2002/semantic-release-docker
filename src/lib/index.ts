@@ -7,8 +7,8 @@ import {
     PluginConfigTagKeys,
     TagTask,
     PublishResponse
-} from './types';
-import execa from 'execa';
+} from './types.js';
+import { execa } from 'execa';
 
 export {
     PluginConfig,

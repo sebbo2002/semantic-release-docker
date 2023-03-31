@@ -11,7 +11,7 @@ import {
     getUrlFromImage,
     exec,
     isRegCtlAvailable
-} from '../../src/lib';
+} from '../../src/lib/index.js';
 import assert from 'assert';
 
 describe('@sebbo2002/semantic-release-docker', function () {
