@@ -12,7 +12,7 @@
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/exec": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
-    "@semantic-release/npm": "^10.0.2",
+    "@semantic-release/npm": "^10.0.3",
     "@types/mocha": "^10.0.0",
     "@types/node": "^18.15.11",
     "@types/semantic-release": "^20.0.1",
