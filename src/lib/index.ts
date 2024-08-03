@@ -1,4 +1,4 @@
-import { Context } from 'semantic-release';
+import { PublishContext } from 'semantic-release';
 import {
     MajorAndMinorPart,
     NormalizedPluginConfigTags,
@@ -19,7 +19,7 @@ export {
     TagTask
 };
 
-let IS_REGCTL_AVAILABLE: boolean | undefined= undefined;
+let IS_REGCTL_AVAILABLE: boolean | undefined = undefined;
 
 export function parseConfig (config: PluginConfig): NormalizedPluginConfig {
     const result: NormalizedPluginConfig = {
@@ -65,7 +65,7 @@ export function getBaseImage (input: string): string {
     return p[0];
 }
 
-export function isPreRelease (context: Context): boolean {
+export function isPreRelease (context: PublishContext): boolean {
     return Boolean(context.nextRelease && context.nextRelease.version.includes('-'));
 }
 
@@ -84,7 +84,7 @@ export function getMajorAndMinorPart (version: string | undefined): MajorAndMino
     };
 }
 
-export function getTagTasks (config: NormalizedPluginConfig, context: Context): TagTask[] {
+export function getTagTasks (config: NormalizedPluginConfig, context: PublishContext): TagTask[] {
     const result: TagTask[] = [];
 
     if (!context.nextRelease) {
@@ -187,6 +187,8 @@ export async function isRegCtlAvailable (): Promise<boolean> {
         IS_REGCTL_AVAILABLE = true;
         return true;
     }
+
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     catch(error) {
         IS_REGCTL_AVAILABLE = false;
         return false;
@@ -205,7 +207,7 @@ export async function copyImage (input: string, output: string): Promise<void> {
     await exec('regctl', ['image', 'copy', input, output]);
 }
 
-export async function publish (pluginConfig: PluginConfig, context: Context): Promise<boolean | PublishResponse> {
+export async function publish (pluginConfig: PluginConfig, context: PublishContext): Promise<boolean | PublishResponse> {
     if (!context.nextRelease) {
         context.logger.log('No release schedules, so no images to tag.');
         return false;
