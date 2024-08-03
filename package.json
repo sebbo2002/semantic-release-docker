@@ -1,17 +1,14 @@
 {
   "author": "Sebastian Pekarek <mail@sebbo.net>",
-  "bin": {
-    "test-cli": "./dist/bin/cli.js"
-  },
   "bugs": {
-    "url": "https://github.com/sebbo2002/js-template/issues"
+    "url": "https://github.com/sebbo2002/semantic-release-docker/issues"
   },
   "dependencies": {
-    "express": "^4.19.2"
+    "execa": "^9.3.0"
   },
-  "description": "A template that I use to start new projects and services.",
+  "description": "Plugin for semantic-release that tags a previously built Docker image and pushes it to one or more Docker registries",
   "devDependencies": {
-    "@eslint/js": "^9.6.0",
+    "@eslint/js": "^9.8.0",
     "@qiwi/semantic-release-gh-pages-plugin": "^5.2.12",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/exec": "^6.0.3",
@@ -20,51 +17,46 @@
     "@types/eslint__js": "^8.42.3",
     "@types/express": "^4.17.21",
     "@types/mocha": "^10.0.7",
-    "@types/node": "^20.14.10",
+    "@types/node": "^22.1.0",
+    "@types/semantic-release": "^20.0.6",
     "c8": "^10.1.2",
-    "eslint": "^9.6.0",
+    "eslint": "^9.8.0",
     "eslint-plugin-jsonc": "^2.16.0",
-    "esm": "^3.2.25",
     "license-checker": "^25.0.1",
-    "mocha": "^10.6.0",
+    "mocha": "^10.7.0",
     "mochawesome": "^7.1.3",
     "semantic-release-license": "^1.0.3",
     "source-map-support": "^0.5.21",
     "ts-node": "^10.9.2",
-    "tsup": "^8.1.0",
-    "typedoc": "^0.26.3",
-    "typescript": "^5.5.3",
-    "typescript-eslint": "^8.0.0-alpha.41"
+    "tsup": "^8.2.4",
+    "typedoc": "^0.26.5",
+    "typescript": "^5.5.4",
+    "typescript-eslint": "^8.0.0-alpha.62"
   },
   "engines": {
     "node": ">=18.0.0"
   },
-  "exports": {
-    "import": "./dist/lib/index.js",
-    "require": "./dist/lib/index.cjs"
-  },
+  "exports": "./dist/index.js",
   "files": [
     "/dist"
   ],
-  "homepage": "https://github.com/sebbo2002/js-template#readme",
+  "homepage": "https://github.com/sebbo2002/semantic-release-docker#readme",
   "license": "MIT",
-  "main": "./dist/lib/index.cjs",
-  "module": "./dist/lib/index.js",
-  "name": "@sebbo2002/js-template-test",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "name": "@sebbo2002/semantic-release-docker",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sebbo2002/js-template.git"
+    "url": "git+https://github.com/sebbo2002/semantic-release-docker.git"
   },
   "scripts": {
-    "build": "tsup && cp ./dist/lib/index.d.ts ./dist/lib/index.d.cts",
+    "build": "tsup",
     "build-all": "./.github/workflows/build.sh",
     "coverage": "c8 mocha",
-    "develop": "TS_NODE_TRANSPILE_ONLY=true node --no-warnings --enable-source-maps --loader ts-node/esm src/bin/start.ts",
     "license-check": "license-checker --production --summary",
     "lint": "eslint .",
-    "start": "node ./dist/bin/start.js",
-    "test": "mocha"
+    "test": "docker pull alpine:latest && mocha"
   },
   "type": "module",
-  "version": "1.0.0"
+  "version": "1.0.0-develop.1"
 }
