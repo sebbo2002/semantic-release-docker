@@ -13,6 +13,7 @@ import {
     isRegCtlAvailable
 } from '../../src/lib/index.js';
 import assert from 'assert';
+import { PublishContext } from 'semantic-release';
 
 describe('@sebbo2002/semantic-release-docker', function () {
     describe('parseConfig', function () {
@@ -137,12 +138,12 @@ describe('@sebbo2002/semantic-release-docker', function () {
                 nextRelease: {
                     type: 'patch',
                     version: '8.2.6',
+                    channel: '',
                     notes: '',
                     gitHead: '',
-                    gitTag: '',
-                    name: ''
+                    gitTag: ''
                 }
-            });
+            } as PublishContext);
 
             assert.strictEqual(result, false);
         });
@@ -179,7 +180,7 @@ describe('@sebbo2002/semantic-release-docker', function () {
                     gitTag: '',
                     name: ''
                 }
-            });
+            } as PublishContext);
 
             assert.strictEqual(result, true);
         });
@@ -208,7 +209,7 @@ describe('@sebbo2002/semantic-release-docker', function () {
                 branch: {
                     name: 'develop'
                 }
-            });
+            } as PublishContext);
 
             assert.strictEqual(result, false);
         });
@@ -268,7 +269,7 @@ describe('@sebbo2002/semantic-release-docker', function () {
                 branch: {
                     name: 'develop'
                 }
-            });
+            } as PublishContext);
         });
         it('patch release', function () {
             const result = getTagTasks({
@@ -315,7 +316,7 @@ describe('@sebbo2002/semantic-release-docker', function () {
                     gitTag: '',
                     name: ''
                 }
-            });
+            } as PublishContext);
 
             assert.deepStrictEqual(result, [
                 {
@@ -398,7 +399,7 @@ describe('@sebbo2002/semantic-release-docker', function () {
                     gitTag: '',
                     channel: 'next'
                 }
-            });
+            } as PublishContext);
 
             assert.deepStrictEqual(result, [
                 {
@@ -505,7 +506,7 @@ describe('@sebbo2002/semantic-release-docker', function () {
                 branch: {
                     name: 'develop'
                 }
-            });
+            } as PublishContext);
 
             assert.strictEqual(result, false);
         });
@@ -551,7 +552,7 @@ describe('@sebbo2002/semantic-release-docker', function () {
                     gitTag: '',
                     name: ''
                 }
-            });
+            } as PublishContext);
 
             assert.strictEqual(result, false);
         });
