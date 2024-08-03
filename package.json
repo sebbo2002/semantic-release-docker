@@ -15,6 +15,7 @@
     "@semantic-release/git": "^10.0.1",
     "@semantic-release/npm": "^12.0.1",
     "@types/eslint__js": "^8.42.3",
+    "@types/express": "^4.17.21",
     "@types/mocha": "^10.0.7",
     "@types/node": "^22.1.0",
     "@types/semantic-release": "^20.0.6",
@@ -53,7 +54,7 @@
     "build-all": "./.github/workflows/build.sh",
     "coverage": "c8 mocha",
     "license-check": "license-checker --production --summary",
-    "lint": "eslint . --ext .ts,.json",
+    "lint": "eslint .",
     "test": "docker pull alpine:latest && mocha"
   },
   "type": "module",

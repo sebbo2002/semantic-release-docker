@@ -187,6 +187,8 @@ export async function isRegCtlAvailable (): Promise<boolean> {
         IS_REGCTL_AVAILABLE = true;
         return true;
     }
+
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     catch(error) {
         IS_REGCTL_AVAILABLE = false;
         return false;
