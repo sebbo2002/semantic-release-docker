@@ -1,47 +1,63 @@
-# template
+# @sebbo2002/semantic-release-docker
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](LICENSE)
 
-Here would be a very short description of the project. So in this example it would be a short information that this is
-a template that I use to start new projects and services.
-
-
-## 🚨 Template Usage Checklist
-- [ ] Update project name in `package.json`
-- [ ] Create `main` and `develop` branches
-- [ ] Set `develop` as default branch
-- [ ] Create Docker Repository
-    - [ ] Add Repository Description
-    - [ ] Add secret: `DOCKERHUB_TOKEN`
-- [ ] Create npm Repository with `npm publish --access public`
-    - [ ] Add secret: `NPM_TOKEN`
-- [ ] Go through repo settings
+Small plugin for semantic-release that tags a previously built Docker image and pushes it to one or more Docker
+registries. It is assumed that the login has already happened before. Supports copying / tagging of multi-platform 
+images if [regclient](https://github.com/regclient/regclient) is installed in the PATH.
 
 
 ## 📦 Installation
 
-	git clone https://github.com/sebbo2002/template.git
-    cd ./template
-
-    npm install
+	npm i --D @sebbo2002/semantic-release-docker
 
 
-## ⚡️ Quick Start
+## 🔧 Configuration Example
 
-This is where it would normally say how to use the project.
-This could be a code example for a library or instructions on how to use a CLI tool.
+```js
+[
+    ['@sebbo2002/semantic-release-docker', {
+        images: [
+            'ghcr.io/sebbo2002/ble2mqtt@sha256:20d67c38e5d1e215413efdca800069998e325669c91a84cba37033866baecc98',
+            'sebbo2002/ble2mqtt:49055cc3e7292e11e9aa081418e3e5570c1f163a'
+        ],
+        tag: {
+            latest: true,
+            major: true,
+            minor: true,
+            version: true,
+            channel: true
+        }
+    }]
+]
+```
 
-
-## 📑 API-Reference
-
-Is there an API that needs to be documented? Then here would be a nice place for it. If there is external documentation,
-you can link it here ([example](https://github.com/sebbo2002/ical-generator/#-api-reference)).
-
-
-## 🙋 FAQ
-
-### What's `1` + `2`
-It's `3` 🎉
+<table>
+    <tr>
+        <th scope="row">images</td>
+        <td>A single image or mutliple images as array. Used as source images to tag.</td>
+    </tr>
+    <tr>
+        <th scope="row">tag.latest</td>
+        <td>Set to true to create latest tag (except it's a pre-release)</td>
+    </tr>
+    <tr>
+        <th scope="row">tag.major</td>
+        <td>Set to true to create a major tag (except it's a pre-release, v4.2.9 → image:4)</td>
+    </tr>
+    <tr>
+        <th scope="row">tag.minor</td>
+        <td>Set to true to create a minor tag (except it's a pre-release, v4.2.9 → image:4.2)</td>
+    </tr>
+    <tr>
+        <th scope="row">tag.version</td>
+        <td>Set to true to create a minor tag (v4.2.9-develop.1 → image:4.2.9-develop.1)</td>
+    </tr>
+    <tr>
+        <th scope="row">tag.channel</td>
+        <td>Set to true to create channel tags (v4.2.9-develop.1 in channel next → image:next)</td>
+    </tr>
+</table>
 
 
 ## 🙆🏼‍♂️ Copyright and license
