@@ -1,22 +1,22 @@
-import { PublishContext } from 'semantic-release';
+import { type PublishContext } from 'semantic-release';
 import {
-    MajorAndMinorPart,
-    NormalizedPluginConfigTags,
-    NormalizedPluginConfig,
-    PluginConfig,
-    PluginConfigTagKeys,
-    TagTask,
-    PublishResponse
+    type MajorAndMinorPart,
+    type NormalizedPluginConfigTags,
+    type NormalizedPluginConfig,
+    type PluginConfig,
+    type PluginConfigTagKeys,
+    type TagTask,
+    type PublishResponse
 } from './types.js';
 import { execa } from 'execa';
 
 export {
-    PluginConfig,
-    NormalizedPluginConfigTags,
-    NormalizedPluginConfig,
-    PluginConfigTagKeys,
-    MajorAndMinorPart,
-    TagTask
+    type PluginConfig,
+    type NormalizedPluginConfigTags,
+    type NormalizedPluginConfig,
+    type PluginConfigTagKeys,
+    type MajorAndMinorPart,
+    type TagTask
 };
 
 let IS_REGCTL_AVAILABLE: boolean | undefined = undefined;
