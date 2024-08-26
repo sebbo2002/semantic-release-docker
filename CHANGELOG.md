@@ -1,3 +1,17 @@
+# [5.0.0](https://github.com/sebbo2002/semantic-release-docker/compare/v4.0.3...v5.0.0) (2024-08-26)
+
+
+### chore
+
+* Drop support for node.js v19 and v21 ([2fff079](https://github.com/sebbo2002/semantic-release-docker/commit/2fff079040a377fbe9ecc340388f6a29b863cf80))
+
+
+### BREAKING CHANGES
+
+* Drop node.js v21 Support
+
+These node.js versions are no longer supported. For more information see https://nodejs.dev/en/about/releases/
+
 ## [4.0.3](https://github.com/sebbo2002/semantic-release-docker/compare/v4.0.2...v4.0.3) (2024-08-03)
 
 ## [4.0.2](https://github.com/sebbo2002/semantic-release-docker/compare/v4.0.1...v4.0.2) (2023-10-25)
