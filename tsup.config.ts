@@ -16,6 +16,7 @@ export default defineConfig({
     noExternal: Object.keys(pkg.dependencies),
     format: ['esm'],
     dts: true,
+    shims: true,
     sourcemap: true,
     minify: true
 });
