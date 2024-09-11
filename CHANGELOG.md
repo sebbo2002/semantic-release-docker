@@ -1,3 +1,12 @@
+## [5.0.1](https://github.com/sebbo2002/semantic-release-docker/compare/v5.0.0...v5.0.1) (2024-09-11)
+
+
+### Bug Fixes
+
+* Fix tsup config / bundled modules ([92bfa4c](https://github.com/sebbo2002/semantic-release-docker/commit/92bfa4c97dc3196433f4764ab950d32e93c29e10))
+* Try to fix `Dynamic require of "child_process" is not supported` ([94ceb4c](https://github.com/sebbo2002/semantic-release-docker/commit/94ceb4c204b7a2cba0b787bdd0fe6d43947a601f))
+* Try to fix `Dynamic require of "child_process" is not supported` II ([96c4a29](https://github.com/sebbo2002/semantic-release-docker/commit/96c4a29a1ad77b4eeb4a13523cb7f5d7e5f5f99a))
+
 # [5.0.0](https://github.com/sebbo2002/semantic-release-docker/compare/v4.0.3...v5.0.0) (2024-08-26)
 
 
