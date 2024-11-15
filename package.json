@@ -4,11 +4,11 @@
     "url": "https://github.com/sebbo2002/semantic-release-docker/issues"
   },
   "dependencies": {
-    "execa": "^9.4.1"
+    "execa": "^9.5.1"
   },
   "description": "Plugin for semantic-release that tags a previously built Docker image and pushes it to one or more Docker registries",
   "devDependencies": {
-    "@eslint/js": "^9.11.1",
+    "@eslint/js": "^9.13.0",
     "@qiwi/semantic-release-gh-pages-plugin": "^5.2.12",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/exec": "^6.0.3",
@@ -17,19 +17,19 @@
     "@types/eslint__js": "^8.42.3",
     "@types/express": "^5.0.0",
     "@types/mocha": "^10.0.9",
-    "@types/node": "^22.7.5",
+    "@types/node": "^22.9.0",
     "@types/semantic-release": "^20.0.6",
     "c8": "^10.1.2",
-    "eslint": "^9.11.1",
+    "eslint": "^9.13.0",
     "eslint-plugin-jsonc": "^2.16.0",
     "license-checker": "^25.0.1",
-    "mocha": "^10.7.3",
+    "mocha": "^10.8.2",
     "mochawesome": "^7.1.3",
     "semantic-release-license": "^1.0.3",
     "source-map-support": "^0.5.21",
-    "tsup": "^8.3.0",
-    "tsx": "^4.19.1",
-    "typedoc": "^0.26.8",
+    "tsup": "^8.3.5",
+    "tsx": "^4.19.2",
+    "typedoc": "^0.26.11",
     "typescript": "^5.6.3",
     "typescript-eslint": "^8.8.1"
   },
