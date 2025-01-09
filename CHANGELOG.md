@@ -1,3 +1,10 @@
+## [5.0.4](https://github.com/sebbo2002/semantic-release-docker/compare/v5.0.3...v5.0.4) (2025-01-09)
+
+
+### Bug Fixes
+
+* **deps:** downgrade eslint to v9.13.0 to resolve typescript-eslint issue ([43aa6ca](https://github.com/sebbo2002/semantic-release-docker/commit/43aa6cacd0201891827c2a6f6e2dcf8cb64b3a86)), closes [#10353](https://github.com/sebbo2002/semantic-release-docker/issues/10353) [typescript-eslint/typescript-eslint#10353](https://github.com/typescript-eslint/typescript-eslint/issues/10353)
+
 ## [5.0.3](https://github.com/sebbo2002/semantic-release-docker/compare/v5.0.2...v5.0.3) (2024-11-15)
 
 ## [5.0.2](https://github.com/sebbo2002/semantic-release-docker/compare/v5.0.1...v5.0.2) (2024-10-24)
