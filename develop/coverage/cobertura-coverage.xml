@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
-<coverage lines-valid="254" lines-covered="223" line-rate="0.8779" branches-valid="58" branches-covered="55" branch-rate="0.9481999999999999" timestamp="1743742498537" complexity="0" version="0.1">
+<coverage lines-valid="254" lines-covered="223" line-rate="0.8779" branches-valid="58" branches-covered="55" branch-rate="0.9481999999999999" timestamp="1744140389546" complexity="0" version="0.1">
   <sources>
     <source>/home/runner/work/semantic-release-docker/semantic-release-docker</source>
   </sources>
