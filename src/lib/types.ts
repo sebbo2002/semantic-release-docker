@@ -1,41 +1,41 @@
-export interface PluginConfig {
-    images: string | string[];
-    tag?: {
-        latest?: boolean;
-        major?: boolean;
-        minor?: boolean;
-        version?: boolean;
-        channel?: boolean;
-    }
+export interface MajorAndMinorPart {
+    major: null | string;
+    minor: null | string;
+}
+
+export interface NormalizedPluginConfig {
+    images: string[];
+    tag: NormalizedPluginConfigTags;
 }
 
 export interface NormalizedPluginConfigTags {
+    channel: boolean;
     latest: boolean;
     major: boolean;
     minor: boolean;
     version: boolean;
-    channel: boolean;
+}
+
+export interface PluginConfig {
+    images: string | string[];
+    tag?: {
+        channel?: boolean;
+        latest?: boolean;
+        major?: boolean;
+        minor?: boolean;
+        version?: boolean;
+    };
 }
 
 export type PluginConfigTagKeys = keyof NormalizedPluginConfigTags;
 
-export interface NormalizedPluginConfig {
-    images: string[];
-    tag: NormalizedPluginConfigTags
-}
-
-export interface MajorAndMinorPart {
-    major: string | null;
-    minor: string | null;
+export interface PublishResponse {
+    channel?: string;
+    name: string;
+    url?: string;
 }
 
 export interface TagTask {
     input: string;
     output: string;
-}
-
-export interface PublishResponse {
-    name: string;
-    url?: string;
-    channel?: string;
 }

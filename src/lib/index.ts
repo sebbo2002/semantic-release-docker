@@ -1,60 +1,53 @@
+import { execa } from 'execa';
 import { type PublishContext } from 'semantic-release';
+
 import {
     type MajorAndMinorPart,
-    type NormalizedPluginConfigTags,
     type NormalizedPluginConfig,
+    type NormalizedPluginConfigTags,
+    type PluginConfig,
+    type PluginConfigTagKeys,
+    type PublishResponse,
+    type TagTask,
+} from './types.js';
+
+export {
+    type MajorAndMinorPart,
+    type NormalizedPluginConfig,
+    type NormalizedPluginConfigTags,
     type PluginConfig,
     type PluginConfigTagKeys,
     type TagTask,
-    type PublishResponse
-} from './types.js';
-import { execa } from 'execa';
-
-export {
-    type PluginConfig,
-    type NormalizedPluginConfigTags,
-    type NormalizedPluginConfig,
-    type PluginConfigTagKeys,
-    type MajorAndMinorPart,
-    type TagTask
 };
 
 let IS_REGCTL_AVAILABLE: boolean | undefined = undefined;
 
-export function parseConfig (config: PluginConfig): NormalizedPluginConfig {
-    const result: NormalizedPluginConfig = {
-        images: [],
-        tag: {
-            latest: true,
-            major: true,
-            minor: true,
-            version: true,
-            channel: true
-        }
-    };
-
-    if (typeof config.images === 'string') {
-        result.images.push(config.images);
-    } else if (Array.isArray(config.images)) {
-        config.images
-            .filter(image => typeof image === 'string')
-            .forEach(image => result.images.push(image));
-    } else {
-        throw new Error('Configuration invalid: No image defined!');
-    }
-
-    const tagNames = Object.keys(result.tag) as PluginConfigTagKeys[];
-    tagNames.forEach(name => {
-        const value = config.tag ? config.tag[name] : undefined;
-        if (value === true || value === false) {
-            result.tag[name] = value;
-        }
-    });
-
-    return result;
+export async function copyImage(input: string, output: string): Promise<void> {
+    await exec('regctl', ['image', 'copy', input, output]);
 }
 
-export function getBaseImage (input: string): string {
+export async function exec(file: string, args: string[]): Promise<void> {
+    try {
+        await execa(file, args);
+    } catch (error) {
+        if (
+            typeof error === 'object' &&
+            error !== null &&
+            'command' in error &&
+            'message' in error
+        ) {
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+            // @ts-ignore
+            throw new Error(
+                `Unable to run "${error.command}": ${error.message}`,
+            );
+        } else {
+            throw new Error(`Unable to run "${args.join(' ')}": ${error}`);
+        }
+    }
+}
+
+export function getBaseImage(input: string): string {
     let p = input.split('@')[0].split(':');
 
     // it's a ":port"
@@ -65,26 +58,27 @@ export function getBaseImage (input: string): string {
     return p[0];
 }
 
-export function isPreRelease (context: PublishContext): boolean {
-    return Boolean(context.nextRelease && context.nextRelease.version.includes('-'));
-}
-
-export function getMajorAndMinorPart (version: string | undefined): MajorAndMinorPart {
+export function getMajorAndMinorPart(
+    version: string | undefined,
+): MajorAndMinorPart {
     if (!version) {
         return {
             major: null,
-            minor: null
+            minor: null,
         };
     }
 
     const parts = version.split('.', 2);
     return {
         major: parts[0],
-        minor: parts[1]
+        minor: parts[1],
     };
 }
 
-export function getTagTasks (config: NormalizedPluginConfig, context: PublishContext): TagTask[] {
+export function getTagTasks(
+    config: NormalizedPluginConfig,
+    context: PublishContext,
+): TagTask[] {
     const result: TagTask[] = [];
 
     if (!context.nextRelease) {
@@ -92,14 +86,14 @@ export function getTagTasks (config: NormalizedPluginConfig, context: PublishCon
     }
 
     const version = context.nextRelease.version;
-    config.images.forEach(input => {
+    config.images.forEach((input) => {
         const outputBase = getBaseImage(input);
 
         // version
         if (config.tag.version && version) {
             result.push({
                 input,
-                output: `${outputBase}:${version}`
+                output: `${outputBase}:${version}`,
             });
         }
 
@@ -110,7 +104,7 @@ export function getTagTasks (config: NormalizedPluginConfig, context: PublishCon
             if (config.tag.latest) {
                 result.push({
                     input,
-                    output: `${outputBase}:latest`
+                    output: `${outputBase}:latest`,
                 });
             }
 
@@ -118,7 +112,7 @@ export function getTagTasks (config: NormalizedPluginConfig, context: PublishCon
             if (config.tag.major && major) {
                 result.push({
                     input,
-                    output: `${outputBase}:${major}`
+                    output: `${outputBase}:${major}`,
                 });
             }
 
@@ -126,7 +120,7 @@ export function getTagTasks (config: NormalizedPluginConfig, context: PublishCon
             if (config.tag.minor && major && minor) {
                 result.push({
                     input,
-                    output: `${outputBase}:${major}.${minor}`
+                    output: `${outputBase}:${major}.${minor}`,
                 });
             }
         }
@@ -136,7 +130,7 @@ export function getTagTasks (config: NormalizedPluginConfig, context: PublishCon
         if (config.tag.channel && channel) {
             result.push({
                 input,
-                output: `${outputBase}:${channel}`
+                output: `${outputBase}:${channel}`,
             });
         }
     });
@@ -144,7 +138,7 @@ export function getTagTasks (config: NormalizedPluginConfig, context: PublishCon
     return result;
 }
 
-export function getUrlFromImage (image: string): string | undefined {
+export function getUrlFromImage(image: string): string | undefined {
     const parts = getBaseImage(image).split('/');
     if (parts[0] === 'ghcr.io' && parts.length === 3) {
         return `https://github.com/${parts[1]}/${parts[2]}/pkgs/container/${parts[2]}`;
@@ -162,23 +156,14 @@ export function getUrlFromImage (image: string): string | undefined {
     }
 }
 
-export async function exec (file: string, args: string[]): Promise<void> {
-    try {
-        await execa(file, args);
-    } catch (error) {
-        if (typeof error === 'object' && error !== null && 'command' in error && 'message' in error) {
-
-            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-            // @ts-ignore
-            throw new Error(`Unable to run "${error.command}": ${error.message}`);
-        } else {
-            throw new Error(`Unable to run "${args.join(' ')}": ${error}`);
-        }
-    }
+export function isPreRelease(context: PublishContext): boolean {
+    return Boolean(
+        context.nextRelease && context.nextRelease.version.includes('-'),
+    );
 }
 
-export async function isRegCtlAvailable (): Promise<boolean> {
-    if(IS_REGCTL_AVAILABLE !== undefined) {
+export async function isRegCtlAvailable(): Promise<boolean> {
+    if (IS_REGCTL_AVAILABLE !== undefined) {
         return IS_REGCTL_AVAILABLE;
     }
 
@@ -186,28 +171,51 @@ export async function isRegCtlAvailable (): Promise<boolean> {
         await execa('which', ['regctl']);
         IS_REGCTL_AVAILABLE = true;
         return true;
-    }
 
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    catch(error) {
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    } catch (error) {
         IS_REGCTL_AVAILABLE = false;
         return false;
     }
 }
 
-export async function tagImage (input: string, output: string): Promise<void> {
-    await exec('docker', ['tag', input, output]);
+export function parseConfig(config: PluginConfig): NormalizedPluginConfig {
+    const result: NormalizedPluginConfig = {
+        images: [],
+        tag: {
+            channel: true,
+            latest: true,
+            major: true,
+            minor: true,
+            version: true,
+        },
+    };
+
+    if (typeof config.images === 'string') {
+        result.images.push(config.images);
+    } else if (Array.isArray(config.images)) {
+        config.images
+            .filter((image) => typeof image === 'string')
+            .forEach((image) => result.images.push(image));
+    } else {
+        throw new Error('Configuration invalid: No image defined!');
+    }
+
+    const tagNames = Object.keys(result.tag) as PluginConfigTagKeys[];
+    tagNames.forEach((name) => {
+        const value = config.tag ? config.tag[name] : undefined;
+        if (value === true || value === false) {
+            result.tag[name] = value;
+        }
+    });
+
+    return result;
 }
 
-export async function pushImage (image: string): Promise<void> {
-    await exec('docker', ['push', image]);
-}
-
-export async function copyImage (input: string, output: string): Promise<void> {
-    await exec('regctl', ['image', 'copy', input, output]);
-}
-
-export async function publish (pluginConfig: PluginConfig, context: PublishContext): Promise<boolean | PublishResponse> {
+export async function publish(
+    pluginConfig: PluginConfig,
+    context: PublishContext,
+): Promise<boolean | PublishResponse> {
     if (!context.nextRelease) {
         context.logger.log('No release schedules, so no images to tag.');
         return false;
@@ -220,14 +228,15 @@ export async function publish (pluginConfig: PluginConfig, context: PublishConte
     }
 
     for (const task of tasks) {
-        if(await isRegCtlAvailable()) {
-            context.logger.log(`Copy with regctl ${task.input} → ${task.output}`);
+        if (await isRegCtlAvailable()) {
+            context.logger.log(
+                `Copy with regctl ${task.input} → ${task.output}`,
+            );
 
             try {
                 await copyImage(task.input, task.output);
                 continue;
-            }
-            catch(error) {
+            } catch (error) {
                 context.logger.error(error);
                 context.logger.log('Retry without regctl…');
             }
@@ -243,12 +252,20 @@ export async function publish (pluginConfig: PluginConfig, context: PublishConte
     const channel = context.nextRelease?.channel;
     const firstTask = tasks[0];
     return {
+        channel,
         name: `Docker container (${firstTask.output})`,
         url: getUrlFromImage(firstTask.output),
-        channel
     };
 }
 
+export async function pushImage(image: string): Promise<void> {
+    await exec('docker', ['push', image]);
+}
+
+export async function tagImage(input: string, output: string): Promise<void> {
+    await exec('docker', ['tag', input, output]);
+}
+
 export default {
-    publish
+    publish,
 };
