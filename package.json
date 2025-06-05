@@ -4,7 +4,7 @@
         "url": "https://github.com/sebbo2002/semantic-release-docker/issues"
     },
     "dependencies": {
-        "execa": "^9.5.3"
+        "execa": "^9.6.0"
     },
     "description": "Plugin for semantic-release that tags a previously built Docker image and pushes it to one or more Docker registries",
     "devDependencies": {
