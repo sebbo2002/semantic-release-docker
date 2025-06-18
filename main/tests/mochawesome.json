@@ -5,9 +5,9 @@
     "passes": 39,
     "pending": 0,
     "failures": 0,
-    "start": "2025-05-12T16:31:35.597Z",
-    "end": "2025-05-12T16:31:35.658Z",
-    "duration": 61,
+    "start": "2025-06-18T19:48:59.968Z",
+    "end": "2025-06-18T19:49:00.034Z",
+    "duration": 66,
     "testsRegistered": 39,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "2247d88d-e07b-4c31-9dc3-84ad3f17a302",
+      "uuid": "b78a4124-1a3c-47c5-8212-2e54ebb0f013",
       "title": "",
       "fullFile": "/home/runner/work/semantic-release-docker/semantic-release-docker/test/lib/index.ts",
       "file": "/test/lib/index.ts",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "6a4de1f0-81d4-49b3-ad3c-27263bb38a5b",
+          "uuid": "b2336b5f-72b8-471e-91ae-e7d2f4d45655",
           "title": "@sebbo2002/semantic-release-docker",
           "fullFile": "/home/runner/work/semantic-release-docker/semantic-release-docker/test/lib/index.ts",
           "file": "/test/lib/index.ts",
@@ -36,7 +36,7 @@
           "tests": [],
           "suites": [
             {
-              "uuid": "0a0a1e79-f5af-4a1d-ac88-f6e248db8938",
+              "uuid": "301d8125-d968-45b5-b310-958a3ca82b0e",
               "title": "parseConfig",
               "fullFile": "/home/runner/work/semantic-release-docker/semantic-release-docker/test/lib/index.ts",
               "file": "/test/lib/index.ts",
@@ -47,7 +47,7 @@
                   "title": "should work without any tags",
                   "fullTitle": "@sebbo2002/semantic-release-docker parseConfig should work without any tags",
                   "timedOut": false,
-                  "duration": 0,
+                  "duration": 1,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -56,8 +56,8 @@
                   "context": null,
                   "code": "const result=parseConfig({images:[\"ubuntu\"]});assert.deepStrictEqual(result,{images:[\"ubuntu\"],tag:{channel:true,latest:true,major:true,minor:true,version:true}})",
                   "err": {},
-                  "uuid": "bd9b4cd5-7e57-42bc-ab6d-4cf06c158e08",
-                  "parentUUID": "0a0a1e79-f5af-4a1d-ac88-f6e248db8938",
+                  "uuid": "53989b5c-34dd-470b-884c-29020d95a0fd",
+                  "parentUUID": "301d8125-d968-45b5-b310-958a3ca82b0e",
                   "isHook": false,
                   "skipped": false
                 },
@@ -74,8 +74,8 @@
                   "context": null,
                   "code": "const result=parseConfig({images:\"ubuntu\"});assert.deepStrictEqual(result,{images:[\"ubuntu\"],tag:{channel:true,latest:true,major:true,minor:true,version:true}})",
                   "err": {},
-                  "uuid": "d6f79c86-f90f-42ce-84b5-1317a9045328",
-                  "parentUUID": "0a0a1e79-f5af-4a1d-ac88-f6e248db8938",
+                  "uuid": "6a27e347-1392-4fd2-8e4d-bd96e00e4082",
+                  "parentUUID": "301d8125-d968-45b5-b310-958a3ca82b0e",
                   "isHook": false,
                   "skipped": false
                 },
@@ -92,8 +92,8 @@
                   "context": null,
                   "code": "const result=parseConfig({images:[\"ubuntu\"],tag:{minor:false}});assert.deepStrictEqual(result,{images:[\"ubuntu\"],tag:{channel:true,latest:true,major:true,minor:false,version:true}})",
                   "err": {},
-                  "uuid": "d787150d-a90a-4a4c-a31d-51a209504b27",
-                  "parentUUID": "0a0a1e79-f5af-4a1d-ac88-f6e248db8938",
+                  "uuid": "26efc470-bd20-4f97-9468-896ec9ebcea1",
+                  "parentUUID": "301d8125-d968-45b5-b310-958a3ca82b0e",
                   "isHook": false,
                   "skipped": false
                 },
@@ -110,29 +110,29 @@
                   "context": null,
                   "code": "assert.throws(()=>{parseConfig({})},/Configuration invalid: No image defined!/)",
                   "err": {},
-                  "uuid": "ad74054b-c160-482a-aca3-7e036ced030a",
-                  "parentUUID": "0a0a1e79-f5af-4a1d-ac88-f6e248db8938",
+                  "uuid": "69a98194-eb77-4e89-93d8-0d050f46e2d2",
+                  "parentUUID": "301d8125-d968-45b5-b310-958a3ca82b0e",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "bd9b4cd5-7e57-42bc-ab6d-4cf06c158e08",
-                "d6f79c86-f90f-42ce-84b5-1317a9045328",
-                "d787150d-a90a-4a4c-a31d-51a209504b27",
-                "ad74054b-c160-482a-aca3-7e036ced030a"
+                "53989b5c-34dd-470b-884c-29020d95a0fd",
+                "6a27e347-1392-4fd2-8e4d-bd96e00e4082",
+                "26efc470-bd20-4f97-9468-896ec9ebcea1",
+                "69a98194-eb77-4e89-93d8-0d050f46e2d2"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 0,
+              "duration": 1,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
             },
             {
-              "uuid": "2fb65fb8-16f3-4258-9099-e1dfb44d818b",
+              "uuid": "e1aed992-5077-455f-a95e-c8ede754048e",
               "title": "getBaseImage",
               "fullFile": "/home/runner/work/semantic-release-docker/semantic-release-docker/test/lib/index.ts",
               "file": "/test/lib/index.ts",
@@ -152,8 +152,8 @@
                   "context": null,
                   "code": "assert.strictEqual(getBaseImage(\"alpine\"),\"alpine\")",
                   "err": {},
-                  "uuid": "5cc89d92-acae-4c9e-ac20-6a12565cf2b4",
-                  "parentUUID": "2fb65fb8-16f3-4258-9099-e1dfb44d818b",
+                  "uuid": "ffd43a22-a9c4-49e0-90f6-4993bc55ceb4",
+                  "parentUUID": "e1aed992-5077-455f-a95e-c8ede754048e",
                   "isHook": false,
                   "skipped": false
                 },
@@ -170,8 +170,8 @@
                   "context": null,
                   "code": "assert.strictEqual(getBaseImage(\"ubuntu:14\"),\"ubuntu\")",
                   "err": {},
-                  "uuid": "91d3dd11-57dc-419f-b826-34c1e91fdc82",
-                  "parentUUID": "2fb65fb8-16f3-4258-9099-e1dfb44d818b",
+                  "uuid": "55f3d38b-d6e3-4679-9bbe-6e149be022b0",
+                  "parentUUID": "e1aed992-5077-455f-a95e-c8ede754048e",
                   "isHook": false,
                   "skipped": false
                 },
@@ -188,8 +188,8 @@
                   "context": null,
                   "code": "assert.strictEqual(getBaseImage(\"sebbo2002/test:14.04\"),\"sebbo2002/test\")",
                   "err": {},
-                  "uuid": "66a9654e-ed1f-4eae-b252-56dc8159d061",
-                  "parentUUID": "2fb65fb8-16f3-4258-9099-e1dfb44d818b",
+                  "uuid": "ee8d902c-e115-4e94-ab18-d3e2b05627a8",
+                  "parentUUID": "e1aed992-5077-455f-a95e-c8ede754048e",
                   "isHook": false,
                   "skipped": false
                 },
@@ -206,8 +206,8 @@
                   "context": null,
                   "code": "assert.strictEqual(getBaseImage(\"ubuntu@14\"),\"ubuntu\")",
                   "err": {},
-                  "uuid": "28824d96-77fa-4d3f-8845-c241036ad5c3",
-                  "parentUUID": "2fb65fb8-16f3-4258-9099-e1dfb44d818b",
+                  "uuid": "8c47f1fe-8abc-45b2-b268-8459824624e5",
+                  "parentUUID": "e1aed992-5077-455f-a95e-c8ede754048e",
                   "isHook": false,
                   "skipped": false
                 },
@@ -224,8 +224,8 @@
                   "context": null,
                   "code": "assert.strictEqual(getBaseImage(\"sebbo2002/test@14.04\"),\"sebbo2002/test\")",
                   "err": {},
-                  "uuid": "39d0f087-896c-4b37-8f57-fa7665132ad9",
-                  "parentUUID": "2fb65fb8-16f3-4258-9099-e1dfb44d818b",
+                  "uuid": "02f5a2a8-ede7-4281-9f45-5b7f18296492",
+                  "parentUUID": "e1aed992-5077-455f-a95e-c8ede754048e",
                   "isHook": false,
                   "skipped": false
                 },
@@ -242,8 +242,8 @@
                   "context": null,
                   "code": "assert.strictEqual(getBaseImage(\"alpine@sha256:aaaaf56b44807c64d294e6c8059b479f35350b454492398225034174808d1726\"),\"alpine\")",
                   "err": {},
-                  "uuid": "0d55d62c-93d2-48f0-a228-30ad0d97008a",
-                  "parentUUID": "2fb65fb8-16f3-4258-9099-e1dfb44d818b",
+                  "uuid": "25caef10-78a2-472f-b722-1f6619c30a57",
+                  "parentUUID": "e1aed992-5077-455f-a95e-c8ede754048e",
                   "isHook": false,
                   "skipped": false
                 },
@@ -260,8 +260,8 @@
                   "context": null,
                   "code": "assert.strictEqual(getBaseImage(\"quay.io/signalfuse/zookeeper\"),\"quay.io/signalfuse/zookeeper\")",
                   "err": {},
-                  "uuid": "bac804e0-bd37-4984-a3bd-7ac915ee7e84",
-                  "parentUUID": "2fb65fb8-16f3-4258-9099-e1dfb44d818b",
+                  "uuid": "2fca8e6d-8df0-46b2-a154-27c2f9062049",
+                  "parentUUID": "e1aed992-5077-455f-a95e-c8ede754048e",
                   "isHook": false,
                   "skipped": false
                 },
@@ -278,8 +278,8 @@
                   "context": null,
                   "code": "assert.strictEqual(getBaseImage(\"internal.mycorp.com:5000/revealjs\"),\"internal.mycorp.com:5000/revealjs\")",
                   "err": {},
-                  "uuid": "6fb2221a-51c9-41d4-8bab-283cfbfa2f4e",
-                  "parentUUID": "2fb65fb8-16f3-4258-9099-e1dfb44d818b",
+                  "uuid": "f85a0c0e-2fed-4d4b-aa26-478ecd7bdc31",
+                  "parentUUID": "e1aed992-5077-455f-a95e-c8ede754048e",
                   "isHook": false,
                   "skipped": false
                 },
@@ -296,23 +296,23 @@
                   "context": null,
                   "code": "assert.strictEqual(getBaseImage(\"internal.mycorp.com:5000/revealjs:3.4.5-3-develop.5\"),\"internal.mycorp.com:5000/revealjs\")",
                   "err": {},
-                  "uuid": "fdacc3e8-0911-4c50-9beb-7f27d941be80",
-                  "parentUUID": "2fb65fb8-16f3-4258-9099-e1dfb44d818b",
+                  "uuid": "3055e8fd-c381-4de6-a11d-796e847411ee",
+                  "parentUUID": "e1aed992-5077-455f-a95e-c8ede754048e",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "5cc89d92-acae-4c9e-ac20-6a12565cf2b4",
-                "91d3dd11-57dc-419f-b826-34c1e91fdc82",
-                "66a9654e-ed1f-4eae-b252-56dc8159d061",
-                "28824d96-77fa-4d3f-8845-c241036ad5c3",
-                "39d0f087-896c-4b37-8f57-fa7665132ad9",
-                "0d55d62c-93d2-48f0-a228-30ad0d97008a",
-                "bac804e0-bd37-4984-a3bd-7ac915ee7e84",
-                "6fb2221a-51c9-41d4-8bab-283cfbfa2f4e",
-                "fdacc3e8-0911-4c50-9beb-7f27d941be80"
+                "ffd43a22-a9c4-49e0-90f6-4993bc55ceb4",
+                "55f3d38b-d6e3-4679-9bbe-6e149be022b0",
+                "ee8d902c-e115-4e94-ab18-d3e2b05627a8",
+                "8c47f1fe-8abc-45b2-b268-8459824624e5",
+                "02f5a2a8-ede7-4281-9f45-5b7f18296492",
+                "25caef10-78a2-472f-b722-1f6619c30a57",
+                "2fca8e6d-8df0-46b2-a154-27c2f9062049",
+                "f85a0c0e-2fed-4d4b-aa26-478ecd7bdc31",
+                "3055e8fd-c381-4de6-a11d-796e847411ee"
               ],
               "failures": [],
               "pending": [],
@@ -323,7 +323,7 @@
               "_timeout": 2000
             },
             {
-              "uuid": "fabb9425-d69c-4940-b326-a9a5cbeea6e8",
+              "uuid": "2cec390d-08a0-4a71-bc35-a688c25ddf3a",
               "title": "isPreRelease",
               "fullFile": "/home/runner/work/semantic-release-docker/semantic-release-docker/test/lib/index.ts",
               "file": "/test/lib/index.ts",
@@ -343,8 +343,8 @@
                   "context": null,
                   "code": "const result=isPreRelease({branch:{name:\"develop\"},env:{},logger:{await:__name(()=>{},\"await\"),complete:__name(()=>{},\"complete\"),debug:__name(()=>{},\"debug\"),error:__name(()=>{},\"error\"),fatal:__name(()=>{},\"fatal\"),fav:__name(()=>{},\"fav\"),info:__name(()=>{},\"info\"),log:__name(()=>{},\"log\"),note:__name(()=>{},\"note\"),pause:__name(()=>{},\"pause\"),pending:__name(()=>{},\"pending\"),star:__name(()=>{},\"star\"),start:__name(()=>{},\"start\"),success:__name(()=>{},\"success\"),wait:__name(()=>{},\"wait\"),warn:__name(()=>{},\"warn\"),watch:__name(()=>{},\"watch\")},nextRelease:{channel:\"\",gitHead:\"\",gitTag:\"\",notes:\"\",type:\"patch\",version:\"8.2.6\"}});assert.strictEqual(result,false)",
                   "err": {},
-                  "uuid": "173f5d0e-051a-4c9a-8317-777668963d75",
-                  "parentUUID": "fabb9425-d69c-4940-b326-a9a5cbeea6e8",
+                  "uuid": "a9db167f-d64c-43d9-ab95-7cb3cc06add0",
+                  "parentUUID": "2cec390d-08a0-4a71-bc35-a688c25ddf3a",
                   "isHook": false,
                   "skipped": false
                 },
@@ -352,7 +352,7 @@
                   "title": "with pre-release",
                   "fullTitle": "@sebbo2002/semantic-release-docker isPreRelease with pre-release",
                   "timedOut": false,
-                  "duration": 0,
+                  "duration": 1,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -361,8 +361,8 @@
                   "context": null,
                   "code": "const result=isPreRelease({branch:{name:\"develop\"},env:{},logger:{await:__name(()=>{},\"await\"),complete:__name(()=>{},\"complete\"),debug:__name(()=>{},\"debug\"),error:__name(()=>{},\"error\"),fatal:__name(()=>{},\"fatal\"),fav:__name(()=>{},\"fav\"),info:__name(()=>{},\"info\"),log:__name(()=>{},\"log\"),note:__name(()=>{},\"note\"),pause:__name(()=>{},\"pause\"),pending:__name(()=>{},\"pending\"),star:__name(()=>{},\"star\"),start:__name(()=>{},\"start\"),success:__name(()=>{},\"success\"),wait:__name(()=>{},\"wait\"),warn:__name(()=>{},\"warn\"),watch:__name(()=>{},\"watch\")},nextRelease:{gitHead:\"\",gitTag:\"\",name:\"\",notes:\"\",type:\"prerelease\",version:\"8.2.6-develop.1\"}});assert.strictEqual(result,true)",
                   "err": {},
-                  "uuid": "2b2e72aa-a643-4b5e-ad1d-7b644c63ceaa",
-                  "parentUUID": "fabb9425-d69c-4940-b326-a9a5cbeea6e8",
+                  "uuid": "cf95637c-0b62-4843-ab49-f07257175b60",
+                  "parentUUID": "2cec390d-08a0-4a71-bc35-a688c25ddf3a",
                   "isHook": false,
                   "skipped": false
                 },
@@ -379,28 +379,28 @@
                   "context": null,
                   "code": "const result=isPreRelease({branch:{name:\"develop\"},env:{},logger:{await:__name(()=>{},\"await\"),complete:__name(()=>{},\"complete\"),debug:__name(()=>{},\"debug\"),error:__name(()=>{},\"error\"),fatal:__name(()=>{},\"fatal\"),fav:__name(()=>{},\"fav\"),info:__name(()=>{},\"info\"),log:__name(()=>{},\"log\"),note:__name(()=>{},\"note\"),pause:__name(()=>{},\"pause\"),pending:__name(()=>{},\"pending\"),star:__name(()=>{},\"star\"),start:__name(()=>{},\"start\"),success:__name(()=>{},\"success\"),wait:__name(()=>{},\"wait\"),warn:__name(()=>{},\"warn\"),watch:__name(()=>{},\"watch\")}});assert.strictEqual(result,false)",
                   "err": {},
-                  "uuid": "0db1e10f-95a6-4b0e-8dd1-4ef7b3ab873b",
-                  "parentUUID": "fabb9425-d69c-4940-b326-a9a5cbeea6e8",
+                  "uuid": "4cef469f-a8e7-4824-b394-bed52c00556f",
+                  "parentUUID": "2cec390d-08a0-4a71-bc35-a688c25ddf3a",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "173f5d0e-051a-4c9a-8317-777668963d75",
-                "2b2e72aa-a643-4b5e-ad1d-7b644c63ceaa",
-                "0db1e10f-95a6-4b0e-8dd1-4ef7b3ab873b"
+                "a9db167f-d64c-43d9-ab95-7cb3cc06add0",
+                "cf95637c-0b62-4843-ab49-f07257175b60",
+                "4cef469f-a8e7-4824-b394-bed52c00556f"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 0,
+              "duration": 1,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
             },
             {
-              "uuid": "e3adf2ed-8c16-4eba-97b7-e1aa3f175240",
+              "uuid": "7a7bdfc3-e906-4df9-91e2-e744de4ea0c6",
               "title": "getMajorAndMinorPart",
               "fullFile": "/home/runner/work/semantic-release-docker/semantic-release-docker/test/lib/index.ts",
               "file": "/test/lib/index.ts",
@@ -420,8 +420,8 @@
                   "context": null,
                   "code": "assert.deepStrictEqual(getMajorAndMinorPart(void 0),{major:null,minor:null})",
                   "err": {},
-                  "uuid": "722d1e28-e801-4fcf-aea0-a6f00ba23728",
-                  "parentUUID": "e3adf2ed-8c16-4eba-97b7-e1aa3f175240",
+                  "uuid": "acafcabb-5134-4d4b-bf3c-48ef52b699e7",
+                  "parentUUID": "7a7bdfc3-e906-4df9-91e2-e744de4ea0c6",
                   "isHook": false,
                   "skipped": false
                 },
@@ -438,8 +438,8 @@
                   "context": null,
                   "code": "assert.deepStrictEqual(getMajorAndMinorPart(\"4.6.1\"),{major:\"4\",minor:\"6\"})",
                   "err": {},
-                  "uuid": "c339ceb4-7b7b-46db-a7f7-433f4835a9d0",
-                  "parentUUID": "e3adf2ed-8c16-4eba-97b7-e1aa3f175240",
+                  "uuid": "f1b3fd3c-6834-4b03-bc09-603a119876fb",
+                  "parentUUID": "7a7bdfc3-e906-4df9-91e2-e744de4ea0c6",
                   "isHook": false,
                   "skipped": false
                 },
@@ -456,17 +456,17 @@
                   "context": null,
                   "code": "assert.deepStrictEqual(getMajorAndMinorPart(\"4.6.1-develop.12\"),{major:\"4\",minor:\"6\"})",
                   "err": {},
-                  "uuid": "fa0c060a-3bea-42aa-8aeb-459ea1a46d15",
-                  "parentUUID": "e3adf2ed-8c16-4eba-97b7-e1aa3f175240",
+                  "uuid": "5c30d065-4cc4-4f36-85a1-6a3651c44300",
+                  "parentUUID": "7a7bdfc3-e906-4df9-91e2-e744de4ea0c6",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "722d1e28-e801-4fcf-aea0-a6f00ba23728",
-                "c339ceb4-7b7b-46db-a7f7-433f4835a9d0",
-                "fa0c060a-3bea-42aa-8aeb-459ea1a46d15"
+                "acafcabb-5134-4d4b-bf3c-48ef52b699e7",
+                "f1b3fd3c-6834-4b03-bc09-603a119876fb",
+                "5c30d065-4cc4-4f36-85a1-6a3651c44300"
               ],
               "failures": [],
               "pending": [],
@@ -477,7 +477,7 @@
               "_timeout": 2000
             },
             {
-              "uuid": "946e6091-20e5-4030-b7d2-3d111f5e332e",
+              "uuid": "443dd826-b64d-4b61-95fa-4bab948cfd34",
               "title": "getTagTasks",
               "fullFile": "/home/runner/work/semantic-release-docker/semantic-release-docker/test/lib/index.ts",
               "file": "/test/lib/index.ts",
@@ -497,8 +497,8 @@
                   "context": null,
                   "code": "getTagTasks({images:[\"ubuntu\"],tag:{channel:true,latest:true,major:true,minor:true,version:true}},{branch:{name:\"develop\"},env:{},logger:{await:__name(()=>{},\"await\"),complete:__name(()=>{},\"complete\"),debug:__name(()=>{},\"debug\"),error:__name(()=>{},\"error\"),fatal:__name(()=>{},\"fatal\"),fav:__name(()=>{},\"fav\"),info:__name(()=>{},\"info\"),log:__name(()=>{},\"log\"),note:__name(()=>{},\"note\"),pause:__name(()=>{},\"pause\"),pending:__name(()=>{},\"pending\"),star:__name(()=>{},\"star\"),start:__name(()=>{},\"start\"),success:__name(()=>{},\"success\"),wait:__name(()=>{},\"wait\"),warn:__name(()=>{},\"warn\"),watch:__name(()=>{},\"watch\")}})",
                   "err": {},
-                  "uuid": "51614177-3fc5-46ab-829a-080c0511d13c",
-                  "parentUUID": "946e6091-20e5-4030-b7d2-3d111f5e332e",
+                  "uuid": "f5284218-bf29-44a4-a6ed-1829ced48d33",
+                  "parentUUID": "443dd826-b64d-4b61-95fa-4bab948cfd34",
                   "isHook": false,
                   "skipped": false
                 },
@@ -515,8 +515,8 @@
                   "context": null,
                   "code": "const result=getTagTasks({images:[\"alpine@sha256:aaaaf56b44807c64d294e6c8059b479f35350b454492398225034174808d1726\",\"sebbo2002/test:1234567\"],tag:{channel:true,latest:true,major:true,minor:true,version:true}},{branch:{name:\"develop\"},env:{},logger:{await:__name(()=>{},\"await\"),complete:__name(()=>{},\"complete\"),debug:__name(()=>{},\"debug\"),error:__name(()=>{},\"error\"),fatal:__name(()=>{},\"fatal\"),fav:__name(()=>{},\"fav\"),info:__name(()=>{},\"info\"),log:__name(()=>{},\"log\"),note:__name(()=>{},\"note\"),pause:__name(()=>{},\"pause\"),pending:__name(()=>{},\"pending\"),star:__name(()=>{},\"star\"),start:__name(()=>{},\"start\"),success:__name(()=>{},\"success\"),wait:__name(()=>{},\"wait\"),warn:__name(()=>{},\"warn\"),watch:__name(()=>{},\"watch\")},nextRelease:{gitHead:\"\",gitTag:\"\",name:\"\",notes:\"\",type:\"patch\",version:\"8.2.6\"}});assert.deepStrictEqual(result,[{input:\"alpine@sha256:aaaaf56b44807c64d294e6c8059b479f35350b454492398225034174808d1726\",output:\"alpine:8.2.6\"},{input:\"alpine@sha256:aaaaf56b44807c64d294e6c8059b479f35350b454492398225034174808d1726\",output:\"alpine:latest\"},{input:\"alpine@sha256:aaaaf56b44807c64d294e6c8059b479f35350b454492398225034174808d1726\",output:\"alpine:8\"},{input:\"alpine@sha256:aaaaf56b44807c64d294e6c8059b479f35350b454492398225034174808d1726\",output:\"alpine:8.2\"},{input:\"sebbo2002/test:1234567\",output:\"sebbo2002/test:8.2.6\"},{input:\"sebbo2002/test:1234567\",output:\"sebbo2002/test:latest\"},{input:\"sebbo2002/test:1234567\",output:\"sebbo2002/test:8\"},{input:\"sebbo2002/test:1234567\",output:\"sebbo2002/test:8.2\"}])",
                   "err": {},
-                  "uuid": "913f3bef-e1a8-4779-a285-1605caa4d298",
-                  "parentUUID": "946e6091-20e5-4030-b7d2-3d111f5e332e",
+                  "uuid": "becbdaf0-aa71-4b60-9305-06627507da54",
+                  "parentUUID": "443dd826-b64d-4b61-95fa-4bab948cfd34",
                   "isHook": false,
                   "skipped": false
                 },
@@ -524,7 +524,7 @@
                   "title": "pre release",
                   "fullTitle": "@sebbo2002/semantic-release-docker getTagTasks pre release",
                   "timedOut": false,
-                  "duration": 0,
+                  "duration": 1,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -533,28 +533,28 @@
                   "context": null,
                   "code": "const result=getTagTasks({images:[\"alpine@sha256:aaaaf56b44807c64d294e6c8059b479f35350b454492398225034174808d1726\",\"sebbo2002/test:1234567\"],tag:{channel:true,latest:true,major:true,minor:true,version:true}},{branch:{name:\"develop\"},env:{},logger:{await:__name(()=>{},\"await\"),complete:__name(()=>{},\"complete\"),debug:__name(()=>{},\"debug\"),error:__name(()=>{},\"error\"),fatal:__name(()=>{},\"fatal\"),fav:__name(()=>{},\"fav\"),info:__name(()=>{},\"info\"),log:__name(()=>{},\"log\"),note:__name(()=>{},\"note\"),pause:__name(()=>{},\"pause\"),pending:__name(()=>{},\"pending\"),star:__name(()=>{},\"star\"),start:__name(()=>{},\"start\"),success:__name(()=>{},\"success\"),wait:__name(()=>{},\"wait\"),warn:__name(()=>{},\"warn\"),watch:__name(()=>{},\"watch\")},nextRelease:{channel:\"next\",gitHead:\"\",gitTag:\"\",name:\"\",notes:\"\",type:\"prerelease\",version:\"8.2.6-develop.3\"}});assert.deepStrictEqual(result,[{input:\"alpine@sha256:aaaaf56b44807c64d294e6c8059b479f35350b454492398225034174808d1726\",output:\"alpine:8.2.6-develop.3\"},{input:\"alpine@sha256:aaaaf56b44807c64d294e6c8059b479f35350b454492398225034174808d1726\",output:\"alpine:next\"},{input:\"sebbo2002/test:1234567\",output:\"sebbo2002/test:8.2.6-develop.3\"},{input:\"sebbo2002/test:1234567\",output:\"sebbo2002/test:next\"}])",
                   "err": {},
-                  "uuid": "4327bccd-2e0c-4dc8-b857-a5e6bc2176c9",
-                  "parentUUID": "946e6091-20e5-4030-b7d2-3d111f5e332e",
+                  "uuid": "992f86be-c47b-44ec-8ce2-463cdb8db705",
+                  "parentUUID": "443dd826-b64d-4b61-95fa-4bab948cfd34",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "51614177-3fc5-46ab-829a-080c0511d13c",
-                "913f3bef-e1a8-4779-a285-1605caa4d298",
-                "4327bccd-2e0c-4dc8-b857-a5e6bc2176c9"
+                "f5284218-bf29-44a4-a6ed-1829ced48d33",
+                "becbdaf0-aa71-4b60-9305-06627507da54",
+                "992f86be-c47b-44ec-8ce2-463cdb8db705"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 0,
+              "duration": 1,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
             },
             {
-              "uuid": "868afa1d-b75d-421e-8c16-7c9a71379985",
+              "uuid": "a70c0ab2-0b06-45d4-a308-2330cb1aca5c",
               "title": "getUrlFromImage",
               "fullFile": "/home/runner/work/semantic-release-docker/semantic-release-docker/test/lib/index.ts",
               "file": "/test/lib/index.ts",
@@ -574,8 +574,8 @@
                   "context": null,
                   "code": "assert.strictEqual(getUrlFromImage(\"alpine\"),\"https://hub.docker.com/_/alpine/tags\")",
                   "err": {},
-                  "uuid": "f1abcfbd-558e-4092-981d-7a8015f1f0c8",
-                  "parentUUID": "868afa1d-b75d-421e-8c16-7c9a71379985",
+                  "uuid": "8faf5a06-8cfa-4e27-9d73-5e929e2a151f",
+                  "parentUUID": "a70c0ab2-0b06-45d4-a308-2330cb1aca5c",
                   "isHook": false,
                   "skipped": false
                 },
@@ -592,8 +592,8 @@
                   "context": null,
                   "code": "assert.strictEqual(getUrlFromImage(\"ubuntu:14\"),\"https://hub.docker.com/_/ubuntu/tags\")",
                   "err": {},
-                  "uuid": "d2602854-2253-4cb6-acc6-fd2ed6bcdf8c",
-                  "parentUUID": "868afa1d-b75d-421e-8c16-7c9a71379985",
+                  "uuid": "70c1231e-6d0a-4e04-8628-0cadbafe2e76",
+                  "parentUUID": "a70c0ab2-0b06-45d4-a308-2330cb1aca5c",
                   "isHook": false,
                   "skipped": false
                 },
@@ -610,8 +610,8 @@
                   "context": null,
                   "code": "assert.strictEqual(getUrlFromImage(\"sebbo2002/gitlab-badges:14.04\"),\"https://hub.docker.com/r/sebbo2002/gitlab-badges/tags\")",
                   "err": {},
-                  "uuid": "7eeb9879-3769-4b09-adbb-73b59957e8c9",
-                  "parentUUID": "868afa1d-b75d-421e-8c16-7c9a71379985",
+                  "uuid": "02ae0754-2041-49c1-a4af-36d601144043",
+                  "parentUUID": "a70c0ab2-0b06-45d4-a308-2330cb1aca5c",
                   "isHook": false,
                   "skipped": false
                 },
@@ -628,8 +628,8 @@
                   "context": null,
                   "code": "assert.strictEqual(getUrlFromImage(\"ubuntu@14\"),\"https://hub.docker.com/_/ubuntu/tags\")",
                   "err": {},
-                  "uuid": "f6e0ced3-b941-468d-9b0e-f4c702933b43",
-                  "parentUUID": "868afa1d-b75d-421e-8c16-7c9a71379985",
+                  "uuid": "04bd7062-2bf2-4f8a-8950-5d0acd7bc43b",
+                  "parentUUID": "a70c0ab2-0b06-45d4-a308-2330cb1aca5c",
                   "isHook": false,
                   "skipped": false
                 },
@@ -637,7 +637,7 @@
                   "title": "sebbo2002/gitlab-badges@14.04",
                   "fullTitle": "@sebbo2002/semantic-release-docker getUrlFromImage sebbo2002/gitlab-badges@14.04",
                   "timedOut": false,
-                  "duration": 1,
+                  "duration": 0,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -646,8 +646,8 @@
                   "context": null,
                   "code": "assert.strictEqual(getUrlFromImage(\"sebbo2002/gitlab-badges@14.04\"),\"https://hub.docker.com/r/sebbo2002/gitlab-badges/tags\")",
                   "err": {},
-                  "uuid": "92f07751-3b9c-4e1d-acb7-c1580b3a83ef",
-                  "parentUUID": "868afa1d-b75d-421e-8c16-7c9a71379985",
+                  "uuid": "95c2c4c3-6414-4b17-9c84-ac16a6ebcf4c",
+                  "parentUUID": "a70c0ab2-0b06-45d4-a308-2330cb1aca5c",
                   "isHook": false,
                   "skipped": false
                 },
@@ -664,8 +664,8 @@
                   "context": null,
                   "code": "assert.strictEqual(getUrlFromImage(\"alpine@sha256:aaaaf56b44807c64d294e6c8059b479f35350b454492398225034174808d1726\"),\"https://hub.docker.com/_/alpine/tags\")",
                   "err": {},
-                  "uuid": "7285b8ba-7349-4699-952c-2650e23654be",
-                  "parentUUID": "868afa1d-b75d-421e-8c16-7c9a71379985",
+                  "uuid": "d4cdca82-a3de-4afc-be78-95c4f1959719",
+                  "parentUUID": "a70c0ab2-0b06-45d4-a308-2330cb1aca5c",
                   "isHook": false,
                   "skipped": false
                 },
@@ -682,8 +682,8 @@
                   "context": null,
                   "code": "assert.strictEqual(getUrlFromImage(\"ghcr.io/sebbo2002/ble2mqtt:ecf33e870c318e4f8a17555aeac14ab1dfaaaddd\"),\"https://github.com/sebbo2002/ble2mqtt/pkgs/container/ble2mqtt\")",
                   "err": {},
-                  "uuid": "4270de92-efc0-4e3d-8adb-44aa7648336c",
-                  "parentUUID": "868afa1d-b75d-421e-8c16-7c9a71379985",
+                  "uuid": "9f78bfa2-27de-42f9-a29c-0128d4efb8df",
+                  "parentUUID": "a70c0ab2-0b06-45d4-a308-2330cb1aca5c",
                   "isHook": false,
                   "skipped": false
                 },
@@ -700,8 +700,8 @@
                   "context": null,
                   "code": "assert.strictEqual(getUrlFromImage(\"ghcr.io/sebbo2002/ble2mqtt@sha256:175c648b777d70f829196d67019ded98d74cf28f3fef08b00998b10485705e68\"),\"https://github.com/sebbo2002/ble2mqtt/pkgs/container/ble2mqtt\")",
                   "err": {},
-                  "uuid": "8ad9951f-8816-4cb6-ad46-dfe543966ca7",
-                  "parentUUID": "868afa1d-b75d-421e-8c16-7c9a71379985",
+                  "uuid": "76ed0d06-9a7c-4ca0-9260-e3b04697877d",
+                  "parentUUID": "a70c0ab2-0b06-45d4-a308-2330cb1aca5c",
                   "isHook": false,
                   "skipped": false
                 },
@@ -718,8 +718,8 @@
                   "context": null,
                   "code": "assert.strictEqual(getUrlFromImage(\"registry.gitlab.com/gitlab-org/gitlab-runner/ci:1.10.8-1\"),\"https://gitlab.com/gitlab-org/gitlab-runner/container_registry\")",
                   "err": {},
-                  "uuid": "56ff71c3-c273-4981-96e3-8610669e43d2",
-                  "parentUUID": "868afa1d-b75d-421e-8c16-7c9a71379985",
+                  "uuid": "7e00159f-4888-4214-8ce9-bfc6eb685e89",
+                  "parentUUID": "a70c0ab2-0b06-45d4-a308-2330cb1aca5c",
                   "isHook": false,
                   "skipped": false
                 },
@@ -736,8 +736,8 @@
                   "context": null,
                   "code": "assert.strictEqual(getUrlFromImage(\"registry.gitlab.com/gitlab-org/gitlab-runner/ci@sha256:5abfd2a06fbc535581350290e5067cf49f908199b60e850015066f38c549622e\"),\"https://gitlab.com/gitlab-org/gitlab-runner/container_registry\")",
                   "err": {},
-                  "uuid": "55a30e40-6b98-4bcf-a83b-1213c163f816",
-                  "parentUUID": "868afa1d-b75d-421e-8c16-7c9a71379985",
+                  "uuid": "0ceea1d8-df9f-44b1-b32c-adc1564f5e03",
+                  "parentUUID": "a70c0ab2-0b06-45d4-a308-2330cb1aca5c",
                   "isHook": false,
                   "skipped": false
                 },
@@ -754,36 +754,36 @@
                   "context": null,
                   "code": "assert.strictEqual(getUrlFromImage(\"containers.topsecret.evil.corp/server:2\"),void 0)",
                   "err": {},
-                  "uuid": "cbb6abf0-4cd1-4c4c-ba6f-25d68e8903ca",
-                  "parentUUID": "868afa1d-b75d-421e-8c16-7c9a71379985",
+                  "uuid": "3ac9a5ad-1c37-4c46-b0b5-ac823dfc2c2b",
+                  "parentUUID": "a70c0ab2-0b06-45d4-a308-2330cb1aca5c",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "f1abcfbd-558e-4092-981d-7a8015f1f0c8",
-                "d2602854-2253-4cb6-acc6-fd2ed6bcdf8c",
-                "7eeb9879-3769-4b09-adbb-73b59957e8c9",
-                "f6e0ced3-b941-468d-9b0e-f4c702933b43",
-                "92f07751-3b9c-4e1d-acb7-c1580b3a83ef",
-                "7285b8ba-7349-4699-952c-2650e23654be",
-                "4270de92-efc0-4e3d-8adb-44aa7648336c",
-                "8ad9951f-8816-4cb6-ad46-dfe543966ca7",
-                "56ff71c3-c273-4981-96e3-8610669e43d2",
-                "55a30e40-6b98-4bcf-a83b-1213c163f816",
-                "cbb6abf0-4cd1-4c4c-ba6f-25d68e8903ca"
+                "8faf5a06-8cfa-4e27-9d73-5e929e2a151f",
+                "70c1231e-6d0a-4e04-8628-0cadbafe2e76",
+                "02ae0754-2041-49c1-a4af-36d601144043",
+                "04bd7062-2bf2-4f8a-8950-5d0acd7bc43b",
+                "95c2c4c3-6414-4b17-9c84-ac16a6ebcf4c",
+                "d4cdca82-a3de-4afc-be78-95c4f1959719",
+                "9f78bfa2-27de-42f9-a29c-0128d4efb8df",
+                "76ed0d06-9a7c-4ca0-9260-e3b04697877d",
+                "7e00159f-4888-4214-8ce9-bfc6eb685e89",
+                "0ceea1d8-df9f-44b1-b32c-adc1564f5e03",
+                "3ac9a5ad-1c37-4c46-b0b5-ac823dfc2c2b"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 1,
+              "duration": 0,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
             },
             {
-              "uuid": "92c01cf6-0425-4cbf-916d-5bb1e7e98822",
+              "uuid": "42360e66-414e-4d1e-9156-a997532a5876",
               "title": "exec",
               "fullFile": "/home/runner/work/semantic-release-docker/semantic-release-docker/test/lib/index.ts",
               "file": "/test/lib/index.ts",
@@ -794,7 +794,7 @@
                   "title": "should run commands",
                   "fullTitle": "@sebbo2002/semantic-release-docker exec should run commands",
                   "timedOut": false,
-                  "duration": 14,
+                  "duration": 15,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -803,8 +803,8 @@
                   "context": null,
                   "code": "assert.strictEqual(await exec(\"echo\",[\"hello\"]),void 0)",
                   "err": {},
-                  "uuid": "69232a51-5a73-4d11-9a0f-5bb97cd42435",
-                  "parentUUID": "92c01cf6-0425-4cbf-916d-5bb1e7e98822",
+                  "uuid": "61ba12b5-9b4b-4ac6-ab8a-080d7bae3a2b",
+                  "parentUUID": "42360e66-414e-4d1e-9156-a997532a5876",
                   "isHook": false,
                   "skipped": false
                 },
@@ -821,27 +821,27 @@
                   "context": null,
                   "code": "assert.rejects(async()=>{assert.strictEqual(await exec(\"exit\",[\"1\"]),void 0)},/Unable to run \"exit 1\": Command failed with ENOENT: exit 1/)",
                   "err": {},
-                  "uuid": "c6edf283-cfe4-4512-a96f-ffab4a71c2b6",
-                  "parentUUID": "92c01cf6-0425-4cbf-916d-5bb1e7e98822",
+                  "uuid": "2c241f72-56e0-44fa-ac27-055f9e784b70",
+                  "parentUUID": "42360e66-414e-4d1e-9156-a997532a5876",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "69232a51-5a73-4d11-9a0f-5bb97cd42435",
-                "c6edf283-cfe4-4512-a96f-ffab4a71c2b6"
+                "61ba12b5-9b4b-4ac6-ab8a-080d7bae3a2b",
+                "2c241f72-56e0-44fa-ac27-055f9e784b70"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 18,
+              "duration": 19,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
             },
             {
-              "uuid": "4f7f4f30-742e-4bdc-bffb-81aec0ec1d18",
+              "uuid": "1f32e5a7-8c0a-4d7f-b705-c4c225874f55",
               "title": "isRegCtlAvailable",
               "fullFile": "/home/runner/work/semantic-release-docker/semantic-release-docker/test/lib/index.ts",
               "file": "/test/lib/index.ts",
@@ -852,7 +852,7 @@
                   "title": "should run command without failing (result unknown)",
                   "fullTitle": "@sebbo2002/semantic-release-docker isRegCtlAvailable should run command without failing (result unknown)",
                   "timedOut": false,
-                  "duration": 5,
+                  "duration": 6,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -861,26 +861,26 @@
                   "context": null,
                   "code": "const result=await isRegCtlAvailable();assert.ok(typeof result,\"boolean\");assert.strictEqual(await isRegCtlAvailable(),result)",
                   "err": {},
-                  "uuid": "e6dbdcb5-edfb-45a3-80fe-becec2991fd8",
-                  "parentUUID": "4f7f4f30-742e-4bdc-bffb-81aec0ec1d18",
+                  "uuid": "c87c773e-3e08-4a75-8218-1f80e7a51d63",
+                  "parentUUID": "1f32e5a7-8c0a-4d7f-b705-c4c225874f55",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "e6dbdcb5-edfb-45a3-80fe-becec2991fd8"
+                "c87c773e-3e08-4a75-8218-1f80e7a51d63"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 5,
+              "duration": 6,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
             },
             {
-              "uuid": "41c09357-c0ab-467c-9441-2c16913538e1",
+              "uuid": "dd683211-85cb-4635-b2c8-451a5bd3566c",
               "title": "tagImage",
               "fullFile": "/home/runner/work/semantic-release-docker/semantic-release-docker/test/lib/index.ts",
               "file": "/test/lib/index.ts",
@@ -900,15 +900,15 @@
                   "context": null,
                   "code": "await tagImage(\"alpine\",\"alpine:tagging-test\")",
                   "err": {},
-                  "uuid": "f83e8a8a-6b92-45f8-923c-7101af2505c5",
-                  "parentUUID": "41c09357-c0ab-467c-9441-2c16913538e1",
+                  "uuid": "8cf872b4-670b-48f1-92bb-b53ac0e5c481",
+                  "parentUUID": "dd683211-85cb-4635-b2c8-451a5bd3566c",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "f83e8a8a-6b92-45f8-923c-7101af2505c5"
+                "8cf872b4-670b-48f1-92bb-b53ac0e5c481"
               ],
               "failures": [],
               "pending": [],
@@ -919,7 +919,7 @@
               "_timeout": 2000
             },
             {
-              "uuid": "ef532f37-305d-4900-8e27-f70fb2a9fd9b",
+              "uuid": "ba0485da-5acd-48f2-b76a-a130118dbed9",
               "title": "publish",
               "fullFile": "/home/runner/work/semantic-release-docker/semantic-release-docker/test/lib/index.ts",
               "file": "/test/lib/index.ts",
@@ -930,7 +930,7 @@
                   "title": "should return false if no release is scheduled",
                   "fullTitle": "@sebbo2002/semantic-release-docker publish should return false if no release is scheduled",
                   "timedOut": false,
-                  "duration": 1,
+                  "duration": 0,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -939,8 +939,8 @@
                   "context": null,
                   "code": "const result=await publish({images:[]},{branch:{name:\"develop\"},env:{},logger:{await:__name(()=>{},\"await\"),complete:__name(()=>{},\"complete\"),debug:__name(()=>{},\"debug\"),error:__name(()=>{},\"error\"),fatal:__name(()=>{},\"fatal\"),fav:__name(()=>{},\"fav\"),info:__name(()=>{},\"info\"),log:__name(()=>{},\"log\"),note:__name(()=>{},\"note\"),pause:__name(()=>{},\"pause\"),pending:__name(()=>{},\"pending\"),star:__name(()=>{},\"star\"),start:__name(()=>{},\"start\"),success:__name(()=>{},\"success\"),wait:__name(()=>{},\"wait\"),warn:__name(()=>{},\"warn\"),watch:__name(()=>{},\"watch\")}});assert.strictEqual(result,false)",
                   "err": {},
-                  "uuid": "6513579a-6b8c-4963-a6ca-fb4a94253693",
-                  "parentUUID": "ef532f37-305d-4900-8e27-f70fb2a9fd9b",
+                  "uuid": "86a52dc0-2b95-4c4f-a1df-e9a5ecc996b7",
+                  "parentUUID": "ba0485da-5acd-48f2-b76a-a130118dbed9",
                   "isHook": false,
                   "skipped": false
                 },
@@ -948,7 +948,7 @@
                   "title": "should return false if there's nothing to do",
                   "fullTitle": "@sebbo2002/semantic-release-docker publish should return false if there's nothing to do",
                   "timedOut": false,
-                  "duration": 0,
+                  "duration": 1,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -957,16 +957,16 @@
                   "context": null,
                   "code": "const result=await publish({images:\"foo/bar:1234\",tag:{channel:false,latest:false,major:false,minor:false,version:false}},{branch:{name:\"develop\"},env:{},logger:{await:__name(()=>{},\"await\"),complete:__name(()=>{},\"complete\"),debug:__name(()=>{},\"debug\"),error:__name(()=>{},\"error\"),fatal:__name(()=>{},\"fatal\"),fav:__name(()=>{},\"fav\"),info:__name(()=>{},\"info\"),log:__name(()=>{},\"log\"),note:__name(()=>{},\"note\"),pause:__name(()=>{},\"pause\"),pending:__name(()=>{},\"pending\"),star:__name(()=>{},\"star\"),start:__name(()=>{},\"start\"),success:__name(()=>{},\"success\"),wait:__name(()=>{},\"wait\"),warn:__name(()=>{},\"warn\"),watch:__name(()=>{},\"watch\")},nextRelease:{gitHead:\"\",gitTag:\"\",name:\"\",notes:\"\",type:\"patch\",version:\"8.2.7\"}});assert.strictEqual(result,false)",
                   "err": {},
-                  "uuid": "d1d12a04-3928-4838-b2c9-d57996fde37d",
-                  "parentUUID": "ef532f37-305d-4900-8e27-f70fb2a9fd9b",
+                  "uuid": "07c7d736-1900-43b1-b219-dbc3f3203d9d",
+                  "parentUUID": "ba0485da-5acd-48f2-b76a-a130118dbed9",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "6513579a-6b8c-4963-a6ca-fb4a94253693",
-                "d1d12a04-3928-4838-b2c9-d57996fde37d"
+                "86a52dc0-2b95-4c4f-a1df-e9a5ecc996b7",
+                "07c7d736-1900-43b1-b219-dbc3f3203d9d"
               ],
               "failures": [],
               "pending": [],
@@ -999,7 +999,7 @@
   ],
   "meta": {
     "mocha": {
-      "version": "11.1.0"
+      "version": "11.5.0"
     },
     "mochawesome": {
       "options": {
