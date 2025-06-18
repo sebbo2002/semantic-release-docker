@@ -1,3 +1,5 @@
+## [6.0.1](https://github.com/sebbo2002/semantic-release-docker/compare/v6.0.0...v6.0.1) (2025-06-18)
+
 # [6.0.0](https://github.com/sebbo2002/semantic-release-docker/compare/v5.0.4...v6.0.0) (2025-05-12)
 
 ### chore
