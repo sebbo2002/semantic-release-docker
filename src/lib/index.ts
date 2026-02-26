@@ -40,9 +40,12 @@ export async function exec(file: string, args: string[]): Promise<void> {
             // @ts-ignore
             throw new Error(
                 `Unable to run "${error.command}": ${error.message}`,
+                { cause: error },
             );
         } else {
-            throw new Error(`Unable to run "${args.join(' ')}": ${error}`);
+            throw new Error(`Unable to run "${args.join(' ')}": ${error}`, {
+                cause: error,
+            });
         }
     }
 }
