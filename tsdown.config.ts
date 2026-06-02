@@ -1,12 +1,15 @@
 import fs from 'fs';
-import { defineConfig } from 'tsup';
+import { defineConfig } from 'tsdown';
 
 const pkg = JSON.parse(fs.readFileSync('./package.json', 'utf-8'));
 
 export default defineConfig({
-    clean: true,
+    deps: {
+        alwaysBundle: Object.keys(pkg.dependencies),
+        neverBundle: [...Object.keys(pkg.devDependencies), 'semantic-release'],
+    },
     dts: true,
-    entry: ['src/lib/index.ts', 'src/bin/cli.ts', 'src/bin/start.ts'],
+    entry: ['src/lib/index.ts'],
     esbuildOptions(options) {
         options.banner = {
             js:
@@ -14,10 +17,8 @@ export default defineConfig({
                 'const require = topLevelCreateRequire(import.meta.url);',
         };
     },
-    external: [...Object.keys(pkg.devDependencies), 'semantic-release'],
     format: ['esm'],
     minify: true,
-    noExternal: Object.keys(pkg.dependencies),
     shims: true,
     sourcemap: true,
 });
