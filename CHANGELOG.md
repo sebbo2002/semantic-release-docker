@@ -1,3 +1,17 @@
+# [7.0.0](https://github.com/sebbo2002/semantic-release-docker/compare/v6.0.2...v7.0.0) (2026-06-02)
+
+### Features
+
+- Drop support for node.js v20 and v23 ([d949a08](https://github.com/sebbo2002/semantic-release-docker/commit/d949a088c82ede8768c62556cfc0da9ce2255b1b))
+
+### BREAKING CHANGES
+
+- Drop node.js v20 / v23 Support
+
+This node.js version is no longer supported. For more information see https://nodejs.dev/en/about/releases/
+
+## [6.0.2](https://github.com/sebbo2002/semantic-release-docker/compare/v6.0.1...v6.0.2) (2025-12-07)
+
 ## [6.0.1](https://github.com/sebbo2002/semantic-release-docker/compare/v6.0.0...v6.0.1) (2025-06-18)
 
 # [6.0.0](https://github.com/sebbo2002/semantic-release-docker/compare/v5.0.4...v6.0.0) (2025-05-12)
