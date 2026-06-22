@@ -18,9 +18,9 @@
         "@types/node": "^25.9.1",
         "@types/semantic-release": "^21.1.0",
         "c8": "^11.0.0",
-        "eslint": "^10.4.0",
+        "eslint": "^10.4.1",
         "eslint-config-prettier": "^10.1.8",
-        "eslint-plugin-jsonc": "^3.1.2",
+        "eslint-plugin-jsonc": "^3.2.0",
         "eslint-plugin-perfectionist": "^5.9.0",
         "globals": "^17.6.0",
         "husky": "^9.1.7",
@@ -31,7 +31,7 @@
         "semantic-release": "^25.0.3",
         "semantic-release-license": "^1.0.3",
         "source-map-support": "^0.5.21",
-        "tsdown": "^0.22.0",
+        "tsdown": "^0.22.2",
         "tsx": "^4.22.3",
         "typedoc": "^0.28.19",
         "typescript": "^6.0.3",
@@ -40,14 +40,13 @@
     "engines": {
         "node": "22 || >=24.0.0"
     },
-    "exports": "./dist/index.js",
+    "exports": "./dist/index.mjs",
     "files": [
         "/dist"
     ],
     "homepage": "https://github.com/sebbo2002/semantic-release-docker#readme",
     "license": "MIT",
-    "main": "./dist/index.js",
-    "module": "./dist/index.js",
+    "main": "./dist/index.mjs",
     "name": "@sebbo2002/semantic-release-docker",
     "repository": {
         "type": "git",
