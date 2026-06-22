@@ -40,14 +40,13 @@
     "engines": {
         "node": "22 || >=24.0.0"
     },
-    "exports": "./dist/index.js",
+    "exports": "./dist/index.mjs",
     "files": [
         "/dist"
     ],
     "homepage": "https://github.com/sebbo2002/semantic-release-docker#readme",
     "license": "MIT",
-    "main": "./dist/index.js",
-    "module": "./dist/index.js",
+    "main": "./dist/index.mjs",
     "name": "@sebbo2002/semantic-release-docker",
     "repository": {
         "type": "git",
