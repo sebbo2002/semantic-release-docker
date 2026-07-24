@@ -1,3 +1,9 @@
+## [7.0.1](https://github.com/sebbo2002/semantic-release-docker/compare/v7.0.0...v7.0.1) (2026-06-22)
+
+### Bug Fixes
+
+- Fix lib file path due to tsdown migration ([bdeea95](https://github.com/sebbo2002/semantic-release-docker/commit/bdeea9575a1db99f86bc0368aaaef82b2811165a))
+
 # [7.0.0](https://github.com/sebbo2002/semantic-release-docker/compare/v6.0.2...v7.0.0) (2026-06-02)
 
 ### Features
