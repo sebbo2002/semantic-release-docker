@@ -1,3 +1,5 @@
+## [7.0.4](https://github.com/sebbo2002/semantic-release-docker/compare/v7.0.3...v7.0.4) (2026-10-29)
+
 ## [7.0.3](https://github.com/sebbo2002/semantic-release-docker/compare/v7.0.2...v7.0.3) (2026-08-25)
 
 ## [7.0.2](https://github.com/sebbo2002/semantic-release-docker/compare/v7.0.1...v7.0.2) (2026-07-24)
