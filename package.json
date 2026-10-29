@@ -4,7 +4,7 @@
         "url": "https://github.com/sebbo2002/semantic-release-docker/issues"
     },
     "dependencies": {
-        "execa": "^10.0.1"
+        "execa": "^10.1.1"
     },
     "description": "Plugin for semantic-release that tags a previously built Docker image and pushes it to one or more Docker registries",
     "devDependencies": {
@@ -12,29 +12,29 @@
         "@semantic-release/changelog": "^7.0.0",
         "@semantic-release/exec": "^7.1.0",
         "@semantic-release/git": "^11.0.1",
-        "@semantic-release/npm": "^13.1.5",
+        "@semantic-release/npm": "^13.2.0",
         "@types/express": "^5.0.6",
         "@types/mocha": "^10.0.10",
-        "@types/node": "^26.2.0",
+        "@types/node": "^26.6.5",
         "c8": "^12.0.0",
-        "eslint": "^10.8.0",
+        "eslint": "^10.13.0",
         "eslint-config-prettier": "^10.1.8",
-        "eslint-plugin-jsonc": "^3.4.1",
-        "eslint-plugin-perfectionist": "^5.10.1",
-        "globals": "^17.9.0",
+        "eslint-plugin-jsonc": "^3.4.2",
+        "eslint-plugin-perfectionist": "^5.13.0",
+        "globals": "^17.13.0",
         "husky": "^9.1.7",
         "license-checker": "^25.0.1",
-        "mocha": "^11.8.0",
-        "mochawesome": "^8.0.1",
-        "prettier": "^3.9.6",
+        "mocha": "^12.0.3",
+        "mochawesome": "^8.1.1",
+        "prettier": "^3.9.10",
         "semantic-release": "^25.0.9",
         "semantic-release-license": "^1.0.3",
         "source-map-support": "^0.5.21",
-        "tsdown": "^0.22.14",
-        "tsx": "^4.23.12",
+        "tsdown": "^0.23.1",
+        "tsx": "^4.23.15",
         "typedoc": "^0.28.20",
         "typescript": "^6.0.3",
-        "typescript-eslint": "^8.67.0"
+        "typescript-eslint": "^8.71.1"
     },
     "engines": {
         "node": "22 || >=24.0.0"
