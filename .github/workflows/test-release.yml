@@ -26,6 +26,8 @@ jobs:
           cache: 'npm'
       - name: 📦 Install dependencies
         run: npm ci
+      - name: 🐳 Pull alpine image (for unit tests)
+        run: docker pull alpine
       - name: ⏳ Run tests
         run: npm run test
 
@@ -43,6 +45,8 @@ jobs:
           cache: 'npm'
       - name: 📦 Install dependencies
         run: npm ci
+      - name: 🐳 Pull alpine image (for unit tests)
+        run: docker pull alpine
       - name: 🔍 Run linter
         run: npm run lint
       - name: ⚙️ Build project
@@ -106,6 +110,8 @@ jobs:
         run: npm ci
       - name: 📂 Create docs folder
         run: mkdir ./docs
+      - name: 🐳 Pull alpine image (for unit tests)
+        run: docker pull alpine
       - name: 🪄 Run semantic-release
         run: BRANCH=${GITHUB_REF#refs/heads/} npx semantic-release
         env:
